@@ -1,0 +1,12 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.section_header {
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: 500;
+}
