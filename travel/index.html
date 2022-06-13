@@ -10,30 +10,35 @@
 </head>
 <body>
     <header class="header">
-        <div class="wrapper">
-             <span class="ico"></span>
-             <h1>Travel Portal</h1>
-        <nav class="header_navigation">
-            <ul class="navigation">
-                <li><a href="#start" title="Explore the beauty of the World">How It Works</a></li>
-                <li><a href="#steps" title="3 Steps to the perfect Trip">Plan Your Trip</a></li>
-                <li><a href="#destination">Destination</a></li>
-                <li><a href="#stories">Travel Stories</a></li>
-            </ul>
-            <div class="header_button">
-                <button class="button_login" href="" title="Login">Login</button>
+        <section class="header_panel">
+            <div class="logo_container">
+                <img src="assets/svg/Vector.svg" class="logo" alt="travel logo">
+                <h1>Travel Portal</h1>
             </div>
-        </div>       
-        </nav>
+            <nav class="header_navigation">
+                <ul class="navigation">
+                    <li><a class="nav_item" href="#start" title="Explore the beauty of the World">How It Works</a></li>
+                    <li><a class="nav_item" href="#steps" title="3 Steps to the perfect Trip">Plan Your Trip</a></li>
+                    <li><a class="nav_item" href="#destination">Destination</a></li>
+                    <li><a class="nav_item" href="#stories">Travel Stories</a></li>
+                </ul>
+            </nav>
+            <div class="header_button">
+                <button class="button button_login" href="" title="Login">Login</button>
+            </div> 
+        </section>
+        <section class="plan_container" id="start">
+                <h2 class="start_header">Explore the beauty of the World</h2>
+                <span class="start_description">Recieve personalized recommendations for countries, hotels, activities and more</span>
+                <form>
+                    <div class="search_container">
+                        <input class="search_input" type="search" placeholder="What would you like to do?" id="site_search" name="q">
+                        <button class="button search_button">Start Planing</button>
+                    </div>
+                </form>
+        </section>
     </header>
     <main>
-        <section class="plan_container" id="start">
-            <div class="wrapper">
-                <h2 class="start_section">Explore the beauty of the World</h2>
-                <span>Recieve personalized recommendations for countries, hotels, activities and more</span>
-                <div class="search"></div>
-            </div>
-        </section>
         <section class="steps_container" id="steps">
             <div class="wrapper">
                 <h2 class="section_header">3 STEPS TO THE PERFECT TRIP</h2>
@@ -42,8 +47,8 @@
                 <div class="steps"></div>
             </div>
         </section>
-        <section class="destination_container" id="destioantion">
-            <div class="wrapper">
+        <section class="destination_container" id="destination">
+            <div class="wrapper_destination">
                 <h2 class="section_header">POPULAR DESTINATIONS</h2>
                 <div class="destination"></div>
                 <div class="destination_slider>"></div>

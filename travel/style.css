@@ -4,9 +4,235 @@ html {
 
 body {
     font-size: 1.6rem;
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;    
 }
 
-.section_header {
-    font-family: 'Red Hat Text', sans-serif;
+.button {
+    background: #0D606F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+    font-family: 'Red Hat Text';
+    font-style: normal;
     font-weight: 500;
+    color: #ffffff;
+    border: #0D606F;
 }
+
+/*Header*/
+
+.header_panel {
+    height: 90px;
+    background:  rgba(242, 120, 92, 0.7);
+    box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    height: 765px;
+    width: 1440px;
+    background-image: url(assets/img/garrett-parker-DlkF4-dbCOU-unsplash\ 1.png);
+    vertical-align: middle;
+}
+
+/*Logo*/
+
+.logo_container {
+    display: flex;
+    height: 31px;
+    vertical-align: middle;
+    object-fit: contain;   
+    margin-left: 120px;
+}
+
+.logo {
+    height: 30px;
+    width: 30px;
+    margin-top: 26px;
+}
+
+h1 {
+     font-family: "Magra";
+     font-weight: 600;
+     line-height: 39px;
+     font-size: 32px;
+     color: #ffffff;
+     margin-top: 25px;
+}
+
+/*Navigation Panel*/
+
+.navigation {
+    display: flex;
+    list-style: none;
+    margin-top: 35px;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 42px;
+}
+
+.nav_item {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/*Login button*/
+
+.header_button {
+    margin-top: 24px;
+    margin-right: 120px;
+}
+
+.button_login {
+    width: 103px;
+    height: 41px;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+/*Plan Section*/
+/*Plan containre and header*/
+
+.plan_container {
+    margin-top: 32px;
+    margin-left: 120px;
+    width: 892px;
+    height: 422px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.start_header {
+    margin-top: 0px;
+    font-family: 'Aleo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 96px;
+    color:#ffffff;
+}
+
+.start_description {
+    margin-bottom: 46px;
+    font-family: 'Aleo';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    height: 24px;
+    color: #ffffff;
+}
+
+/*Search*/
+
+.search_container {
+    width: 892px;
+    height: 95px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search_input {
+    margin-left: 41px;
+    margin-top: 32px;
+    padding: 0;
+    width: 560px;
+    height: 22px;
+    font-family: 'Aleo';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 22px;
+    color: #F2785C;
+    border: none;
+    background: none;
+}
+
+::placeholder {
+    font-family: 'Aleo';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #F2785C;
+}
+
+.search_button {
+    margin-top: 18px;
+    margin-right: 18px;
+    width: 228px;
+    height: 59px;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+
+
+
+
+.steps_container {
+    margin: 80px auto 97px auto;
+    width: 1117px;
+    height: 247px;
+    background: beige;
+}
+
+.destination_container {
+    
+    overflow: hidden;
+    
+}
+ .wrapper_destination {
+     width: 2520px;
+     background: beige;
+     height: 943px;
+}
+
+/*.header::before {
+    content: "";
+    background-image: url(assets/img/garrett-parker-DlkF4-dbCOU-unsplash\ 1.png);
+    position: absolute;
+    width: 1440px;
+    height: 765px;
+    z-index: -1;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.plan_container {
+    display:block;
+    height: 422px;
+    width: 892px;
+    margin-top: 32px;
+    margin-left: 120px;
+
+}
+
+
+
+.steps_container {
+    margin-top: 301px;
+    margin-bottom: 97px;
+    margin-left: 131px;
+    height: 247px;
+    width: 1117px;
+}
+
+.destination_container {
+    height: 943px;
+}*/
