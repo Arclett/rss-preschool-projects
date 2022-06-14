@@ -10,54 +10,85 @@
 </head>
 <body>
     <header class="header">
-        <section class="header_panel">
-            <div class="logo_container">
-                <img src="assets/svg/Vector.svg" class="logo" alt="travel logo">
-                <h1>Travel Portal</h1>
+        <section class="header-panel">
+            <div class="logo header-panel__logo">
+                <img src="assets/svg/Vector.svg" class="svg-header logo__svg-header" alt="travel logo">
+                <h1 class="main-header logo__main-header">Travel Portal</h1>
             </div>
-            <nav class="header_navigation">
-                <ul class="navigation">
-                    <li><a class="nav_item" href="#start" title="Explore the beauty of the World">How It Works</a></li>
-                    <li><a class="nav_item" href="#steps" title="3 Steps to the perfect Trip">Plan Your Trip</a></li>
-                    <li><a class="nav_item" href="#destination">Destination</a></li>
-                    <li><a class="nav_item" href="#stories">Travel Stories</a></li>
+            <nav class="nav">
+                <ul class="nav-list nav__nav-list">
+                    <li><a class="nav-item" href="#start" title="Explore the beauty of the World">How It Works</a></li>
+                    <li><a class="nav-item" href="#steps" title="3 Steps to the perfect Trip">Plan Your Trip</a></li>
+                    <li><a class="nav-item" href="#destination">Destination</a></li>
+                    <li><a class="nav-item" href="#stories">Travel Stories</a></li>
                 </ul>
-            </nav>
-            <div class="header_button">
-                <button class="button button_login" href="" title="Login">Login</button>
-            </div> 
+            </nav>           
+            <button class="button button__login" href="" title="Login">Login</button>            
         </section>
-        <section class="plan_container" id="start">
-                <h2 class="start_header">Explore the beauty of the World</h2>
-                <span class="start_description">Recieve personalized recommendations for countries, hotels, activities and more</span>
+        <section class="plan header__plan" id="start">
+                <h2 class="plan-caption plan__plan-caption">Explore the beauty of the World</h2>
+                <span class="plan-label plan__plan-label">Recieve personalized recommendations for countries, hotels, activities and more</span>
                 <form>
-                    <div class="search_container">
-                        <input class="search_input" type="search" placeholder="What would you like to do?" id="site_search" name="q">
-                        <button class="button search_button">Start Planing</button>
+                    <div class="search">
+                        <input class="search__input" type="search" placeholder="What would you like to do?" id="site_search" name="q">
+                        <button class="button search__button">Start Planing</button>
                     </div>
                 </form>
         </section>
     </header>
     <main>
-        <section class="steps_container" id="steps">
-            <div class="wrapper">
-                <h2 class="section_header">3 STEPS TO THE PERFECT TRIP</h2>
-                <div class="steps"></div>
-                <div class="steps"></div>
-                <div class="steps"></div>
+        <section class="steps" id="steps">
+                <h2 class="section-header steps__section-header">3 STEPS TO THE PERFECT TRIP</h2>
+                <ul class="steps-list steps__steps-list">
+                    <li class="steps-item">
+                        <div class="svg-container">
+                            <img class="steps-svg svg-container__steps-svg" src="assets/svg/Vector2.svg" alt="human on moto">
+                        </div>
+                        <p class="steps-caption">Tell us what you want to do</p>
+                    </li>
+                    <li class="steps-item">
+                        <div class="svg-container">
+                            <img class="steps-svg svg-container__steps-svg" src="assets/svg/Vector3.svg" alt="calendar">
+                        </div>
+                        <p class="steps-caption">Share us preferable dates</p>
+                    </li>
+                    <li class="steps-item">
+                        <div class="svg-container">
+                            <img class="steps-svg svg-container__steps-svg" src="assets/svg/Vector4.svg" alt="aircraft">
+                        </div>
+                        <p class="steps-caption">We will give you recommendations</p>
+                    </li>
+                </ul>
             </div>
         </section>
-        <section class="destination_container" id="destination">
-            <div class="wrapper_destination">
-                <h2 class="section_header">POPULAR DESTINATIONS</h2>
-                <div class="destination"></div>
-                <div class="destination_slider>"></div>
-                <div class="destination_button"></div>
-            </div>
+        <section class="destination" id="destination">            
+                <h2 class="section-header">POPULAR DESTINATIONS</h2>
+                <div class="destination__wrapper">
+                    <div class="destination-gallery destination__destination-galery">
+                        <div class="places destination-gallery__palces">
+                            <p class="places-caption places__places-caption">SPAIN</p>
+                        </div>
+                        <div class="places destination-gallery__palces">
+                            <p class="places-caption places__places-caption">JAPAN</p>
+                        </div>
+                        <div class="places destination-gallery__palces">
+                            <p class="places-caption places__places-caption">USA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-slider destination__destination-slider">
+                    <div class="ellipse"></div>
+                    <div class="ellipse ellipse_active"></div>
+                    <div class="ellipse"></div>
+                </div>
+                <button class="button arrow-button">
+                    <img class="arrow arrow-button__arrow" src="assets/img/arrow.png" alt="arrow">
+                    <p class="arrow-caption arrow-button__arrow-caption">Find More</p>
+                </button>         
         </section>
         <section class="stories_container" id="stories">
             <div class="wrapper">
-                <h2 class="section_header">TRAVEL STORIES</h2>
+                <h2 class="section-header">TRAVEL STORIES</h2>
                 <article class="story">
                     <h3 class="story_head"></h3>
                     <div class="story_text"></div>

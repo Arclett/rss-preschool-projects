@@ -8,7 +8,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;   
 }
 
 .button {
@@ -22,9 +22,18 @@ body {
     border: #0D606F;
 }
 
+.section-header {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 53px;
+    color: #F2785C;
+}
+
 /*Header*/
 
-.header_panel {
+.header-panel {
     height: 90px;
     background:  rgba(242, 120, 92, 0.7);
     box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
@@ -41,42 +50,54 @@ body {
 
 /*Logo*/
 
-.logo_container {
+.logo {
     display: flex;
     height: 31px;
     vertical-align: middle;
-    object-fit: contain;   
+    object-fit: contain;    
+}
+
+.header-panel__logo {
     margin-left: 120px;
 }
 
-.logo {
+.svg-header {
     height: 30px;
-    width: 30px;
-    margin-top: 26px;
+    width: 30px;    
 }
 
-h1 {
+.logo__svg-header {
+   margin-top: 26px; 
+}
+
+.main-header {
      font-family: "Magra";
      font-weight: 600;
      line-height: 39px;
      font-size: 32px;
-     color: #ffffff;
-     margin-top: 25px;
+     color: #ffffff;     
+}
+
+.logo__main-header {
+    margin-top: 25px;
 }
 
 /*Navigation Panel*/
 
-.navigation {
+.nav-list {
     display: flex;
     list-style: none;
-    margin-top: 35px;
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
     gap: 42px;
 }
 
-.nav_item {
+.nav__nav-list {
+   margin-top: 35px; 
+}
+
+.nav-item {
     font-family: 'Red Hat Text';
     font-style: normal;
     font-weight: 500;
@@ -88,43 +109,46 @@ h1 {
 
 /*Login button*/
 
-.header_button {
-    margin-top: 24px;
-    margin-right: 120px;
-}
-
-.button_login {
+.button__login {
     width: 103px;
     height: 41px;
     font-size: 16px;
     line-height: 21px;
+    margin-top: 24px;
+    margin-right: 120px;
 }
 
 /*Plan Section*/
-/*Plan containre and header*/
+/*Plan container and header*/
 
-.plan_container {
-    margin-top: 32px;
-    margin-left: 120px;
+.plan {    
     width: 892px;
     height: 422px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
 }
 
-.start_header {
-    margin-top: 0px;
+.header__plan {
+    margin-top: 32px;
+    margin-left: 120px; 
+}
+
+.plan-caption {
     font-family: 'Aleo';
     font-style: normal;
     font-weight: 700;
     font-size: 80px;
     line-height: 96px;
     color:#ffffff;
+    
 }
 
-.start_description {
-    margin-bottom: 46px;
+.plan__plan-caption {
+    margin-top: 0px;
+}
+
+.plan-label {    
     font-family: 'Aleo';
     font-style: italic;
     font-weight: 700;
@@ -133,9 +157,13 @@ h1 {
     color: #ffffff;
 }
 
+.plan__plan-label {
+   margin-bottom: 46px; 
+}
+
 /*Search*/
 
-.search_container {
+.search {
     width: 892px;
     height: 95px;
     background: rgba(255, 255, 255, 0.7);
@@ -144,7 +172,7 @@ h1 {
     justify-content: space-between;
 }
 
-.search_input {
+.search__input {
     margin-left: 41px;
     margin-top: 32px;
     padding: 0;
@@ -169,7 +197,7 @@ h1 {
     color: #F2785C;
 }
 
-.search_button {
+.search__button {
     margin-top: 18px;
     margin-right: 18px;
     width: 228px;
@@ -178,26 +206,178 @@ h1 {
     line-height: 32px;
 }
 
+/* 3 steps section*/
 
-
-
-
-.steps_container {
-    margin: 80px auto 97px auto;
-    width: 1117px;
-    height: 247px;
-    background: beige;
+.steps {
+    /*margin: 80px auto 97px auto;*/
+    height: 424px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.destination_container {
-    
+.steps__section-header {
+    margin-top: 80px;
+}
+
+.steps-list {
+    height: 154px;
+    width: 1177px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.steps__steps-list {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*steps-list elements*/
+
+.svg-container {
+    width: 100px;
+    height: 100px;
+    background: #F2785C;
+    border-radius: 16px;
+    margin: auto;
+}
+
+.steps-svg:nth-child(1) {
+    margin-top: 28px;
+    margin-left: 25px;
+}
+
+.steps-caption {
+    font-family: 'Aleo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0D606F;
+}
+
+
+
+
+/* destination section*/
+/*header and gallery section*/
+
+.destination {    
+    height: 1042px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.destination-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    width: 2520px;
+    height: 943px;
+}
+
+.destination__destination-galery {
+    margin-left: -540px;
+}
+
+.destination__wrapper {
     overflow: hidden;
-    
+    margin: 0px;
+    width: 1440px;
 }
- .wrapper_destination {
-     width: 2520px;
-     background: beige;
-     height: 943px;
+
+.places {
+    height: 800px;
+    width: 800px
+}
+
+.places:nth-child(1) {
+    background-image: url(assets/img/Rectangle\ 23.png);
+}
+
+.places:nth-child(2) {
+    background-image: url(assets/img/Rectangle\ 24.png);
+}
+
+.places:nth-child(3) {
+    background-image: url(assets/img/Rectangle\ 25.png);
+}
+
+.places-caption {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    color: #FFFFFF;
+}
+
+.places__places-caption {
+    margin-top: 718px;
+    margin-left: 15px;
+}
+
+/*slider and button*/
+
+.destination-slider {
+    height: 20px;
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.destination__destination-slider {
+    margin-top: 24px;
+    margin-bottom: 40px;
+}
+
+.ellipse {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: rgba(242, 120, 92, 0.5);
+}
+
+.ellipse_active {
+    background-color: #F2785C;
+}
+
+.arrow-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 59px;
+    width: 228px;
+}
+
+.arrow-caption {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+    width: 116px;
+}
+
+.arrow-button__arrow-caption {
+    margin-top: 13.5px;
+    margin-right: 31px;
+}
+
+.arrow {
+    height: 22.5px;
+    width: 35px;
+}
+
+.arrow-button__arrow {
+    margin-top: 18.25px;
+    margin-left: 33.5px;
 }
 
 /*.header::before {
