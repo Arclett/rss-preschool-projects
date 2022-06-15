@@ -1,14 +1,10 @@
-html {
-    font-size: 10px;
-}
-
 body {
-    font-size: 1.6rem;
     width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
+    margin:0px auto 0px auto;
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
+    background: top url(assets/img/garrett-parker-DlkF4-dbCOU-unsplash\ 1.jpg) no-repeat,
+        bottom url(assets/img/Rectangle27.jpg) no-repeat;    
 }
 
 .button {
@@ -33,19 +29,12 @@ body {
 
 /*Header*/
 
-.header-panel {
+.header {
     height: 90px;
     background:  rgba(242, 120, 92, 0.7);
     box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
     display: flex;
     justify-content: space-between;
-}
-
-.header {
-    height: 765px;
-    width: 1440px;
-    background-image: url(assets/img/garrett-parker-DlkF4-dbCOU-unsplash\ 1.png);
-    vertical-align: middle;
 }
 
 /*Logo*/
@@ -57,7 +46,7 @@ body {
     object-fit: contain;    
 }
 
-.header-panel__logo {
+.header__logo {
     margin-left: 120px;
 }
 
@@ -75,7 +64,8 @@ body {
      font-weight: 600;
      line-height: 39px;
      font-size: 32px;
-     color: #ffffff;     
+     color: #ffffff;
+     margin: 0px;     
 }
 
 .logo__main-header {
@@ -121,7 +111,7 @@ body {
 /*Plan Section*/
 /*Plan container and header*/
 
-.plan {    
+.preview-wrapper {    
     width: 892px;
     height: 422px;
     display: flex;
@@ -129,26 +119,29 @@ body {
     justify-content: space-between;
 }
 
-.header__plan {
+.preview {
+    height: 675px;
+}
+
+.header__preview {
     margin-top: 32px;
     margin-left: 120px; 
 }
 
-.plan-caption {
+.preview-caption {
     font-family: 'Aleo';
     font-style: normal;
     font-weight: 700;
     font-size: 80px;
     line-height: 96px;
-    color:#ffffff;
-    
+    color:#ffffff;    
 }
 
-.plan__plan-caption {
+.preview__preview-caption {
     margin-top: 0px;
 }
 
-.plan-label {    
+.preview-label {    
     font-family: 'Aleo';
     font-style: italic;
     font-weight: 700;
@@ -157,7 +150,7 @@ body {
     color: #ffffff;
 }
 
-.plan__plan-label {
+.preview__preview-label {
    margin-bottom: 46px; 
 }
 
@@ -209,7 +202,6 @@ body {
 /* 3 steps section*/
 
 .steps {
-    /*margin: 80px auto 97px auto;*/
     height: 424px;
     display: flex;
     flex-direction: column;
@@ -218,6 +210,7 @@ body {
 
 .steps__section-header {
     margin-top: 80px;
+    margin-bottom: 40px;
 }
 
 .steps-list {
@@ -227,11 +220,11 @@ body {
     flex-direction: row;
     list-style: none;
     justify-content: space-between;
+    padding: 0px;
 }
 
 .steps__steps-list {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0px auto 0px auto;
 }
 
 /*steps-list elements*/
@@ -244,10 +237,25 @@ body {
     margin: auto;
 }
 
-.steps-svg:nth-child(1) {
+.steps-item:nth-child(2) {
+    margin-left: 231px;
+    margin-right: 150px;
+}
+
+.svg-container1__steps-svg {
     margin-top: 28px;
     margin-left: 25px;
 }
+
+.svg-container2__steps-svg {
+    margin: 24px;
+}
+
+.svg-container3__steps-svg {
+    margin-top:28px;
+    margin-left: 20px;
+}
+
 
 .steps-caption {
     font-family: 'Aleo';
@@ -258,14 +266,10 @@ body {
     color: #0D606F;
 }
 
-
-
-
 /* destination section*/
 /*header and gallery section*/
 
 .destination {    
-    height: 1042px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -286,25 +290,26 @@ body {
 
 .destination__wrapper {
     overflow: hidden;
-    margin: 0px;
     width: 1440px;
+    height: 800px;
 }
 
 .places {
     height: 800px;
-    width: 800px
+    width: 800px;
+    border-radius: 16px;    
 }
 
 .places:nth-child(1) {
-    background-image: url(assets/img/Rectangle\ 23.png);
+    background-image: url(assets/img/Rectangle23.jpg);
 }
 
 .places:nth-child(2) {
-    background-image: url(assets/img/Rectangle\ 24.png);
+    background-image: url(assets/img/Rectangle24.jpg);
 }
 
 .places:nth-child(3) {
-    background-image: url(assets/img/Rectangle\ 25.png);
+    background-image: url(assets/img/Rectangle25.jpg);
 }
 
 .places-caption {
@@ -351,68 +356,148 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 13.5px 31px;
     height: 59px;
     width: 228px;
-}
-
-.arrow-caption {
+    align-content: center;
     font-family: 'Red Hat Text';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 32px;
     color: #FFFFFF;
-    width: 116px;
 }
 
-.arrow-button__arrow-caption {
-    margin-top: 13.5px;
-    margin-right: 31px;
+.arrow_margin {
+    margin-top: -4px;
 }
 
-.arrow {
-    height: 22.5px;
-    width: 35px;
-}
+/*stories section*/
 
-.arrow-button__arrow {
-    margin-top: 18.25px;
-    margin-left: 33.5px;
-}
-
-/*.header::before {
-    content: "";
-    background-image: url(assets/img/garrett-parker-DlkF4-dbCOU-unsplash\ 1.png);
-    position: absolute;
-    width: 1440px;
-    height: 765px;
-    z-index: -1;
-}
-
-.wrapper {
+.stories {
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.plan_container {
-    display:block;
-    height: 422px;
-    width: 892px;
-    margin-top: 32px;
+.stories__section-header {
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.stories-container {
+    height: 1270px;
+    background: rgba(255, 255, 255, 0.7);
+    width: 1440px;
+}
+
+.story {
+    width: 1200px;
+    height: 250px;
+}
+
+.story-img {
+    float: left;
+}
+
+.stories-container__story {
     margin-left: 120px;
-
+    
 }
 
-
-
-.steps_container {
-    margin-top: 301px;
-    margin-bottom: 97px;
-    margin-left: 131px;
-    height: 247px;
-    width: 1117px;
+.stories-container__story:nth-child(1) {
+    margin-top: 40px;
 }
 
-.destination_container {
-    height: 943px;
-}*/
+.story-header {
+    font-family: 'Aleo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    color: #0D606F;
+}
+
+.story-text {
+    font-family: 'Aleo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0D606F;
+}
+
+.read-more {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.story__story-header {
+    margin-bottom: 24px;
+    margin-top: 30px;
+}
+
+.story__story-text {
+    margin-left: 40px;
+    display: block;
+}
+
+.story-img {
+    margin-right: 40px;
+    height: 250px;
+    filter: drop-shadow(0px 4px 4px #0D606F);
+    border-radius: 16px;
+    border: none;
+}
+
+.stories-container__button {
+    margin: 40px auto 41px auto;
+}
+
+/*footer*/
+
+.footer {
+    height: 61px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 728.96px;
+    height: 33.65px;    
+}
+
+.footer__footer-container{
+    margin-left: 590px;
+    margin-top: 14px;
+    margin-bottom: 13.35px;
+}
+
+.credits {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #FFFFFF;
+    margin: 0px;    
+}
+
+.footer-container__credits {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.media-links {
+    display:flex;
+    width: 140.96px;
+    justify-content: space-between;
+}
+
+.footer-svg:nth-child(2) {
+    background: url(assets/svg/Vector6.svg) no-repeat center;
+}
+
+.footer-svg_frame {
+    margin-top: 2.5px;
+}
