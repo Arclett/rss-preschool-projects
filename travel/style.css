@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     width: 1440px;
     margin:0px auto 0px auto;
@@ -11,20 +15,25 @@ body {
     background: #0D606F;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
     border-radius: 10px;
-    font-family: 'Red Hat Text';
+    font-family: 'Red Hat Text', sans-serif;
     font-style: normal;
     font-weight: 500;
     color: #ffffff;
     border: #0D606F;
 }
 
+.button:hover {
+    border: 2px solid #ffffff;
+}
+
 .section-header {
-    font-family: 'Red Hat Text';
+    font-family: 'Red Hat Text', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 40px;
     line-height: 53px;
     color: #F2785C;
+    margin: 0px;
 }
 
 /*Header*/
@@ -60,7 +69,7 @@ body {
 }
 
 .main-header {
-     font-family: "Magra";
+     font-family: "Magra", sans-serif;
      font-weight: 600;
      line-height: 39px;
      font-size: 32px;
@@ -70,6 +79,7 @@ body {
 
 .logo__main-header {
     margin-top: 25px;
+    margin-left:5px;
 }
 
 /*Navigation Panel*/
@@ -78,17 +88,28 @@ body {
     display: flex;
     list-style: none;
     flex-direction: row;
-    align-items: flex-start;
+    justify-content: space-between;
     padding: 0px;
     gap: 42px;
 }
 
+.nav {
+    width: 527px;
+}
+
+.header__nav {
+    margin-left: 162px;
+    margin-right: 196px;
+    padding: 0px;
+}
+
 .nav__nav-list {
    margin-top: 35px; 
+   
 }
 
 .nav-item {
-    font-family: 'Red Hat Text';
+    font-family: 'Red Hat Text', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -96,6 +117,11 @@ body {
     color: #ffffff;
     text-decoration: none;
 }
+
+.nav-item:hover {
+    text-decoration: underline;
+}
+
 
 /*Login button*/
 
@@ -116,6 +142,7 @@ body {
     height: 422px;
     display: flex;
     flex-direction: column;
+    gap: 0;
     justify-content: space-between;
 }
 
@@ -125,11 +152,12 @@ body {
 
 .header__preview {
     margin-top: 32px;
-    margin-left: 120px; 
+    margin-left: 120px;
+    
 }
 
 .preview-caption {
-    font-family: 'Aleo';
+    font-family: 'Aleo', serif;
     font-style: normal;
     font-weight: 700;
     font-size: 80px;
@@ -138,11 +166,11 @@ body {
 }
 
 .preview__preview-caption {
-    margin-top: 0px;
+    margin: 0px;
 }
 
 .preview-label {    
-    font-family: 'Aleo';
+    font-family: 'Aleo', serif;
     font-style: italic;
     font-weight: 700;
     font-size: 20px;
@@ -151,12 +179,17 @@ body {
 }
 
 .preview__preview-label {
-   margin-bottom: 46px; 
+   margin-bottom: 46px;
+   margin-top: 26px; 
 }
 
 /*Search*/
 
-.search {
+.search_margin {
+    margin-bottom: 32px;
+}
+
+.search-container {
     width: 892px;
     height: 95px;
     background: rgba(255, 255, 255, 0.7);
@@ -167,11 +200,11 @@ body {
 
 .search__input {
     margin-left: 41px;
-    margin-top: 32px;
+    margin-top: 33px;
     padding: 0;
     width: 560px;
     height: 22px;
-    font-family: 'Aleo';
+    font-family: 'Aleo', serif;
     font-style: italic;
     font-weight: 400;
     font-size: 24px;
@@ -182,7 +215,7 @@ body {
 }
 
 ::placeholder {
-    font-family: 'Aleo';
+    font-family: 'Aleo', serif;
     font-style: italic;
     font-weight: 400;
     font-size: 24px;
@@ -197,19 +230,20 @@ body {
     height: 59px;
     font-size: 24px;
     line-height: 32px;
+    padding: 0px;
 }
 
 /* 3 steps section*/
 
 .steps {
-    height: 424px;
+    /*height: 424px;*/
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .steps__section-header {
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 40px;
 }
 
@@ -258,12 +292,13 @@ body {
 
 
 .steps-caption {
-    font-family: 'Aleo';
+    font-family: 'Aleo', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
     color: #0D606F;
+    margin-top: 25px;
 }
 
 /* destination section*/
@@ -274,6 +309,11 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.destination__section-header {
+    margin-top: 97px;
+    margin-bottom: 46px;
 }
 
 .destination-gallery {
@@ -313,7 +353,7 @@ body {
 }
 
 .places-caption {
-    font-family: 'Red Hat Text';
+    font-family: 'Red Hat Text', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 32px;
@@ -360,12 +400,13 @@ body {
     height: 59px;
     width: 228px;
     align-content: center;
-    font-family: 'Red Hat Text';
+    font-family: 'Red Hat Text', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 32px;
     color: #FFFFFF;
+    border: 2px solid #0D606F;
 }
 
 .arrow_margin {
@@ -411,7 +452,7 @@ body {
 }
 
 .story-header {
-    font-family: 'Aleo';
+    font-family: 'Aleo', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 35px;
@@ -474,7 +515,7 @@ body {
 }
 
 .credits {
-    font-family: 'Red Hat Text';
+    font-family: 'Red Hat Text', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;

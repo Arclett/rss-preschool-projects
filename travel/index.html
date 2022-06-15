@@ -7,7 +7,9 @@
     <title>Travel</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/svg/favicon.ico"/>
-    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,700&family=Magra:wght@400;700&family=Red+Hat+Text:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@400;700&family=Red+Hat+Text:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -15,12 +17,12 @@
                 <img src="assets/svg/Vector.svg" class="svg-header logo__svg-header" alt="travel logo">
                 <h1 class="main-header logo__main-header">Travel Portal</h1>
             </div>
-            <nav class="nav">
+            <nav class="nav header__nav">
                 <ul class="nav-list nav__nav-list">
                     <li><a class="nav-item" href="#start" title="Explore the beauty of the World">How It Works</a></li>
                     <li><a class="nav-item" href="#steps" title="3 Steps to the perfect Trip">Plan Your Trip</a></li>
-                    <li><a class="nav-item" href="#destination">Destination</a></li>
-                    <li><a class="nav-item" href="#stories">Travel Stories</a></li>
+                    <li><a class="nav-item" href="#destination" title="Destinations">Destinations</a></li>
+                    <li><a class="nav-item" href="#stories" title="Stories">Travel Stories</a></li>
                 </ul>
             </nav>           
             <button class="button button__login" title="Login">Login</button>                    
@@ -29,11 +31,11 @@
         <section class="preview" id="start">
                 <div class="preview-wrapper header__preview">
                     <h2 class="preview-caption preview__preview-caption">Explore the beauty of the World</h2>
-                    <span class="preview-label preview__preview-label">Recieve personalized recommendations for countries, hotels, activities and more</span>
-                    <form>
-                        <div class="search">
+                    <span class="preview-label preview__preview-label">Receive personalized recommendations for countries, hotels, activities and more</span>
+                    <form class="search_margin">
+                        <div class="search-container">
                             <input class="search__input" type="search" placeholder="What would you like to do?" id="site_search" name="q">
-                            <button class="button search__button">Start Planing</button>
+                            <button class="button search__button">Start Planning</button>
                         </div>
                     </form>
                 </div>
@@ -62,7 +64,7 @@
                 </ul>
         </section>
         <section class="destination" id="destination">            
-                <h2 class="section-header">POPULAR DESTINATIONS</h2>
+                <h2 class="section-header destination__section-header">POPULAR DESTINATIONS</h2>
                 <div class="destination__wrapper">
                     <div class="destination-gallery destination__destination-galery">
                         <div class="places destination-gallery__palces">
