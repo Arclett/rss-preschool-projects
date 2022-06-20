@@ -4,11 +4,11 @@ html {
 
 body {
     width: 1440px;
-    margin:0px auto 0px auto;
+    margin: 0px auto 0px auto;
     display: flex;
     flex-direction: column;
     background: top url(assets/img/garrett-parker-DlkF4-dbCOU-unsplash\ 1.jpg) no-repeat,
-        bottom url(assets/img/Rectangle27.jpg) no-repeat;    
+        bottom url(assets/img/Rectangle27.jpg) no-repeat;
 }
 
 .button {
@@ -40,7 +40,7 @@ body {
 
 .header {
     height: 90px;
-    background:  rgba(242, 120, 92, 0.7);
+    background: rgba(242, 120, 92, 0.7);
     box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
     display: flex;
     justify-content: space-between;
@@ -52,7 +52,7 @@ body {
     display: flex;
     height: 31px;
     vertical-align: middle;
-    object-fit: contain;    
+    object-fit: contain;
 }
 
 .header__logo {
@@ -61,25 +61,25 @@ body {
 
 .svg-header {
     height: 30px;
-    width: 30px;    
+    width: 30px;
 }
 
 .logo__svg-header {
-   margin-top: 26px; 
+    margin-top: 26px;
 }
 
 .main-header {
-     font-family: "Magra", sans-serif;
-     font-weight: 600;
-     line-height: 39px;
-     font-size: 32px;
-     color: #ffffff;
-     margin: 0px;     
+    font-family: "Magra", sans-serif;
+    font-weight: 600;
+    line-height: 39px;
+    font-size: 32px;
+    color: #ffffff;
+    margin: 0px;
 }
 
 .logo__main-header {
     margin-top: 25px;
-    margin-left:5px;
+    margin-left: 5px;
 }
 
 /*Navigation Panel*/
@@ -104,8 +104,8 @@ body {
 }
 
 .nav__nav-list {
-   margin-top: 35px; 
-   
+    margin-top: 35px;
+
 }
 
 .nav-item {
@@ -137,7 +137,7 @@ body {
 /*Plan Section*/
 /*Plan container and header*/
 
-.preview-wrapper {    
+.preview-wrapper {
     width: 892px;
     height: 422px;
     display: flex;
@@ -153,7 +153,7 @@ body {
 .header__preview {
     margin-top: 32px;
     margin-left: 120px;
-    
+
 }
 
 .preview-caption {
@@ -162,14 +162,14 @@ body {
     font-weight: 700;
     font-size: 80px;
     line-height: 96px;
-    color:#ffffff;    
+    color: #ffffff;
 }
 
 .preview__preview-caption {
     margin: 0px;
 }
 
-.preview-label {    
+.preview-label {
     font-family: 'Aleo', serif;
     font-style: italic;
     font-weight: 700;
@@ -179,8 +179,8 @@ body {
 }
 
 .preview__preview-label {
-   margin-bottom: 46px;
-   margin-top: 26px; 
+    margin-bottom: 46px;
+    margin-top: 26px;
 }
 
 /*Search*/
@@ -286,7 +286,7 @@ body {
 }
 
 .svg-container3__steps-svg {
-    margin-top:28px;
+    margin-top: 28px;
     margin-left: 20px;
 }
 
@@ -304,7 +304,7 @@ body {
 /* destination section*/
 /*header and gallery section*/
 
-.destination {    
+.destination {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -337,7 +337,7 @@ body {
 .places {
     height: 800px;
     width: 800px;
-    border-radius: 16px;    
+    border-radius: 16px;
 }
 
 .places:nth-child(1) {
@@ -444,7 +444,7 @@ body {
 
 .stories-container__story {
     margin-left: 120px;
-    
+
 }
 
 .stories-container__story:nth-child(1) {
@@ -471,6 +471,10 @@ body {
 .read-more {
     text-decoration: underline;
     font-weight: bold;
+}
+
+.read-more:hover {
+    color: #F2785C;
 }
 
 .story__story-header {
@@ -505,10 +509,10 @@ body {
     display: flex;
     justify-content: space-between;
     width: 728.96px;
-    height: 33.65px;    
+    height: 33.65px;
 }
 
-.footer__footer-container{
+.footer__footer-container {
     margin-left: 590px;
     margin-top: 14px;
     margin-bottom: 13.35px;
@@ -521,7 +525,7 @@ body {
     font-size: 16px;
     line-height: 21px;
     color: #FFFFFF;
-    margin: 0px;    
+    margin: 0px;
 }
 
 .footer-container__credits {
@@ -530,15 +534,21 @@ body {
 }
 
 .media-links {
-    display:flex;
+    display: flex;
     width: 140.96px;
     justify-content: space-between;
 }
 
-.footer-svg:nth-child(2) {
-    background: url(assets/svg/Vector6.svg) no-repeat center;
+.footer-svg {
+    border: 1px solid rgba(255, 255, 255, 0.0);
+
 }
 
-.footer-svg_frame {
-    margin-top: 2.5px;
+.svg-link {
+    height: 31px;
+}
+
+.footer-svg:hover {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
 }
