@@ -19,6 +19,7 @@
 <body>
     <header class="header">
         <!-- <img class="bg" src="assets/img/garrett-parker-DlkF4-dbCOU-unsplash 1.jpg"> -->
+        <div class="gradient"></div>
         <div class="logo header__logo">
             <img src="assets/svg/Vector.svg" class="svg-header logo__svg-header" alt="travel logo">
             <h1 class="main-header logo__main-header">Travel Portal</h1>
@@ -32,6 +33,11 @@
             </ul>
         </nav>
         <button class="button button__login" title="Login">Login</button>
+        <div class="burger">
+            <img class="burger-part" src="assets/svg/burger.svg">
+            <img class="burger-part" src="assets/svg/burger.svg">
+            <img class="burger-part" src="assets/svg/burger.svg">
+        </div>
     </header>
     <main>
         <section class="preview" id="start">
@@ -61,7 +67,7 @@
                     <div class="svg-container">
                         <img class="svg-container2__steps-svg" src="assets/svg/Vector3.svg" alt="calendar">
                     </div>
-                    <p class="steps-caption">Share us preferable dates</p>
+                    <p class="steps-caption calc2">Share us preferable dates</p>
                 </li>
                 <li class="steps-item">
                     <div class="svg-container">
@@ -74,26 +80,40 @@
         <section class="destination" id="destination">
             <h2 class="section-header destination__section-header">POPULAR DESTINATIONS</h2>
             <div class="destination__wrapper">
-                <div class="destination-gallery destination__destination-galery">
-                    <div class="places destination-gallery__palces">
-                        <img class="places__img hidden" src="assets/img/Rectangle23.jpg" alt="view from spain">
+                <div class="destination-gallery destination__destination-galery desktop">
+                    <div class="places destination-gallery__palces arrow-left">
                         <img class="slider-arrow" src="assets/svg/arrow-left.svg">
-                        <p class="places-caption hidden places__places-caption">SPAIN</p>
                     </div>
                     <div class="places destination-gallery__palces">
-                        <img class="places__img " src="assets/img/Rectangle24.jpg" alt="view from japan">
+                        <img class="places__img " src="assets/img/Rectangle23.jpg" alt="view from spain">
+                        <p class="places-caption  places__places-caption">SPAIN</p>
+                    </div>
+                    <div class="places destination-gallery__palces hidden">
+                        <img class="places__img" src="assets/img/Rectangle24.jpg" alt="view from japan">
                         <p class="places-caption places__places-caption">JAPAN</p>
                     </div>
-                    <div class="places destination-gallery__palces">
-                        <img class="places__img hidden" src="assets/img/Rectangle25.jpg" alt="viev from USA">
+                    <div class="places destination-gallery__palces hidden">
+                        <img class="places__img" src="assets/img/Rectangle25.jpg" alt="viev from USA">
+                        <p class="places-caption places__places-caption">USA</p>
+                    </div>
+                    <div class="places destination-gallery__palces arrow-right">
                         <img class="slider-arrow" src="assets/svg/arrow-right.svg">
-                        <p class="places-caption hidden places__places-caption">USA</p>
+                    </div>
+                </div>
+                <div class="destination-gallery destination__destination-galery mobile">
+                    <p class="places-caption  places__places-caption">SPAIN</p>
+                    <div class="arrow-container">
+                        <img class="slider-arrow" src="assets/svg/arrow-left.svg">
+                        <img class="slider-arrow" src="assets/svg/arrow-right.svg">
+                    </div>
+                    <div class="places destination-gallery__palces">
+                        <img class="places__img " src="assets/img/Rectangle 26.jpg" alt="view from spain">
                     </div>
                 </div>
             </div>
             <div class="destination-slider destination__destination-slider">
                 <div class="ellipse"></div>
-                <div class="ellipse ellipse_active"></div>
+                <div class="ellipse"></div>
                 <div class="ellipse"></div>
             </div>
             <button class="button arrow-button">
@@ -104,59 +124,95 @@
             <h2 class="section-header stories__section-header">TRAVEL STORIES</h2>
             <div class="stories-container stories__stories-container">
                 <article class="story stories-container__story">
-                    <img class="story-img" src="assets/img/Rectangle15.jpg" alt="sea and mountains">
+                    <img class="story-img desktop" src="assets/img/Rectangle15.jpg" alt="sea and mountains">
+                    <img class="story-img mobile" src="assets/img/Rectangle15m.jpg" alt="sea and mountains">
                     <h3 class="story-header story__story-header">10 Photos of Attractive Thailand</h3>
-                    <p class="story-text story__story-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                        id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit... <br><span class="read-more">Read
+                    <p class="story-text story__story-text"><span class="desktop">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo
+                            consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim
+                            id est laborum.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit...</span><span class="mobile">Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla.Lorem ipsum dolor sit
+                            a...</span><br><span class="read-more">Read
                             More</span></p>
                 </article>
                 <article class="story stories-container__story">
-                    <img class="story-img" src="assets/img/Rectangle16.jpg" alt="canyon">
+                    <img class="story-img desktop" src="assets/img/Rectangle16.jpg" alt="canyon">
+                    <img class="story-img mobile" src="assets/img/Rectangle16m.jpg" alt="canyon">
                     <h3 class="story-header story__story-header">Canyonlands National Park, Utah</h3>
-                    <p class="story-text story__story-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                        id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit... <br><span class="read-more">Read
+                    <p class="story-text story__story-text"><span class="desktop">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo
+                            consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim
+                            id est laborum.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit...</span><span class="mobile">Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla.Lorem ipsum dolor sit
+                            a...</span><br><span class="read-more">Read
                             More</span></p>
                 </article>
                 <article class="story stories-container__story">
-                    <img class="story-img" src="assets/img/Rectangle17.jpg" alt="forest and mountains">
+                    <img class="story-img desktop" src="assets/img/Rectangle17.jpg" alt="forest and mountains">
+                    <img class="story-img mobile" src="assets/img/Rectangle18m.jpg" alt="forest and mountains">
                     <h3 class="story-header story__story-header">I left my heart in the Mountains!</h3>
-                    <p class="story-text story__story-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                        id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit... <br><span class="read-more">Read
+                    <p class="story-text story__story-text"><span class="desktop">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo
+                            consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim
+                            id est laborum.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit...</span><span class="mobile">Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla.Lorem ipsum dolor sit
+                            a...</span><br><span class="read-more">Read
                             More</span></p>
                 </article>
                 <article class="story stories-container__story">
-                    <img class="story-img" src="assets/img/Rectangle18.jpg" alt="car in desert">
+                    <img class="story-img desktop" src="assets/img/Rectangle18.jpg" alt="car in desert">
+                    <img class="story-img mobile" src="assets/img/Rectangle17m.jpg" alt="car in desert">
                     <h3 class="story-header story__story-header">The Longest journey in my life!</h3>
-                    <p class="story-text story__story-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-                        id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit... <br><span class="read-more">Read
+                    <p class="story-text story__story-text"><span class="desktop">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo
+                            consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim
+                            id est laborum.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit...</span><span class="mobile">Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla.Lorem ipsum dolor sit
+                            a...</span><br><span class="read-more">Read
                             More</span></p>
                 </article>
                 <button class="button arrow-button stories-container__button">
@@ -167,7 +223,7 @@
     </main>
     <footer class="footer">
         <div class="footer-container footer__footer-container">
-            <p class="credits footer-container__credits">All Rights Reserved © Travel Portal</p>
+            <p class="credits footer-container__credits desktop">All Rights Reserved © Travel Portal</p>
             <div class="media-links">
                 <div class="footer-svg"><a href="https://github.com/Arclett" title="Link to GitHub"><img
                             class="svg-link" src="assets/svg/free-icon-github-5968846.svg" alt="github icon"></a></div>
