@@ -19,6 +19,11 @@ body {
   display: none;
 }
 
+.nav-piece {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 /* Burger */
 
 .overlay {
@@ -116,6 +121,7 @@ body {
 
 .button:hover {
   border: 2px solid #ffffff;
+  transition: 0.3s;
 }
 
 /*header*/
@@ -157,6 +163,7 @@ body {
 
 .nav-item:hover {
   text-decoration: underline;
+  transition: 0.3s;
 }
 
 /*preview*/
@@ -640,6 +647,7 @@ body {
 
   .read-more:hover {
     color: #f2785c;
+    transition: 0.3s;
   }
 
   .story__story-header {
@@ -702,6 +710,7 @@ body {
   .footer-svg:hover {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 8px;
+    transition: 0.3s;
   }
 }
 
@@ -716,6 +725,11 @@ body {
   .modal-nav {
     height: 40%;
   }
+
+  .story-img {
+    height: 147px;
+    width: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -726,6 +740,10 @@ body {
 
   .modal-nav {
     height: 40%;
+  }
+
+  .burger {
+    margin-right: 8.33%;
   }
 
   .burger,
@@ -781,12 +799,17 @@ body {
     font-size: 12px;
   }
 
+  .story-img {
+    height: 147px;
+    width: auto;
+  }
   .story-text {
     font-size: 12px;
   }
   .story-header {
     font-size: 16px;
   }
+
   .steps__section-header {
     margin-top: 20px;
     margin-bottom: 3px;
@@ -857,6 +880,17 @@ body {
   }
 }
 
+@media (max-width: 540px) {
+  .story-text {
+    font-size: 9px;
+  }
+
+  .story-img {
+    height: 100px;
+    width: auto;
+  }
+}
+
 @media screen and (max-width: 390px) {
   body {
     background: url(assets/img/garrett-parker-DlkF4-dbCOU-unsplash2.jpg)
@@ -874,6 +908,10 @@ body {
     height: 251px;
     z-index: -1;
     background: linear-gradient(180deg, #0d606f 0%, rgba(13, 96, 111, 0) 25.1%);
+  }
+
+  .burger {
+    margin-right: 0px;
   }
 
   .section-header {
@@ -1020,6 +1058,10 @@ body {
   .steps-caption {
     font-size: 10px;
     margin-top: 19px;
+  }
+
+  .mid {
+    white-space: nowrap;
   }
 
   /* destination */
@@ -1205,6 +1247,7 @@ body {
 
   .read-more:hover {
     color: #f2785c;
+    transition: 0.3s;
   }
 
   .story__story-header {
@@ -1266,6 +1309,7 @@ body {
   .footer-svg:hover {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 8px;
+    transition: 0.3s;
   }
 }
 
