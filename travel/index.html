@@ -13,10 +13,10 @@
       href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@400;700&family=Red+Hat+Text:wght@500&display=swap"
       rel="stylesheet"
     />
-    <script src="index.js"></script>
   </head>
 
   <body>
+    <div class="overlay"></div>
     <header class="header">
       <div class="logo header__logo">
         <img
@@ -73,6 +73,45 @@
           src="assets/svg/burger.svg"
           alt="part of burger menu icon"
         />
+      </div>
+      <div class="modal-nav">
+        <div class="burger-cross">
+          <img class="cross" src="assets/svg/cross.svg" />
+        </div>
+        <div class="burger-menu">
+          <div class="burger-nav">
+            <a
+              href="#start"
+              title="Explore the beauty of the World"
+              class="nav-piece"
+              >How It Works</a
+            >
+          </div>
+          <div class="burger-nav">
+            <a
+              href="#steps"
+              title="3 Steps to the perfect Trip"
+              class="nav-piece"
+              >Plan Your Trip</a
+            >
+          </div>
+          <div class="burger-nav">
+            <a href="#destination" title="Destinations" class="nav-piece"
+              >Destinations</a
+            >
+          </div>
+          <div class="burger-nav">
+            <a href="#stories" title="Stories" class="nav-piece"
+              >Travel Stories</a
+            >
+          </div>
+          <div class="burger-nav"><p class="nav-piece">Account</p></div>
+          <div class="burger-nav">
+            <a class="nav-piece" href="#social" title="Media links">
+              Social Media
+            </a>
+          </div>
+        </div>
       </div>
     </header>
     <main>
@@ -144,13 +183,6 @@
           <div
             class="destination-gallery destination__destination-galery desktop"
           >
-            <div class="places destination-gallery__palces arrow-left">
-              <img
-                class="slider-arrow"
-                src="assets/svg/arrow-left.svg"
-                alt="arrow"
-              />
-            </div>
             <div class="places destination-gallery__palces">
               <img
                 class="places__img"
@@ -174,13 +206,6 @@
                 alt="viev from USA"
               />
               <p class="places-caption places__places-caption">USA</p>
-            </div>
-            <div class="places destination-gallery__palces arrow-right">
-              <img
-                class="slider-arrow"
-                src="assets/svg/arrow-right.svg"
-                alt="arrow"
-              />
             </div>
           </div>
           <div
@@ -378,7 +403,7 @@
         <p class="credits footer-container__credits desktop">
           All Rights Reserved © Travel Portal
         </p>
-        <div class="media-links">
+        <div class="media-links" id="social">
           <div class="footer-svg">
             <a href="https://github.com/Arclett" title="Link to GitHub"
               ><img
@@ -399,4 +424,5 @@
       </div>
     </footer>
   </body>
+  <script src="index.js"></script>
 </html>
