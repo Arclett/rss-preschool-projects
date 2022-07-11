@@ -15,10 +15,6 @@ body {
   min-width: 320px;
 }
 
-.hide {
-  display: none;
-}
-
 .nav-piece {
   color: #ffffff;
   text-decoration: none;
@@ -65,7 +61,7 @@ body {
   height: 250px;
   width: 165px;
   padding: 8px 15px 0px 8px;
-  transform: translateX(-100%);
+  /* transform: translateX(-100%); */
   transition: 0.3s;
 }
 
