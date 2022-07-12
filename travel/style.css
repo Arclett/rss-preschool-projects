@@ -532,12 +532,15 @@ body {
 
   .destination-gallery {
     gap: 60px;
-    width: 175%;
+    width: 294.44%;
+    /* 4240px */
     /* height: 943px; */
+    transform: translateX(0%);
+    transition: 0s;
   }
 
   .destination__destination-galery {
-    margin-left: -37.5%;
+    margin-left: -97.2%;
   }
 
   .destination__wrapper {
