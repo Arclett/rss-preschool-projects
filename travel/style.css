@@ -47,7 +47,7 @@ body {
   margin-top: 4px;
 }
 .modal-nav {
-  position: absolute;
+  position: fixed;
   /* left: calc(100vw - 165px); */
   box-sizing: border-box;
   display: flex;
@@ -562,6 +562,7 @@ body {
   .places-caption {
     font-size: 32px;
     line-height: 42px;
+    text-transform: uppercase;
     z-index: 5;
   }
 
@@ -587,9 +588,9 @@ body {
     margin-bottom: 40px;
   }
 
-  .ellipse:nth-child(1) {
+  /* .ellipse:nth-child(2) {
     background-color: #f2785c;
-  }
+  } */
 
   .arrow-button {
     padding: 13.5px 31px;
@@ -1176,9 +1177,9 @@ body {
     background-color: rgba(242, 120, 92, 0.5);
   }
 
-  .ellipse:nth-child(1) {
+  /* .ellipse:nth-child(1) {
     background-color: #f2785c;
-  }
+  } */
 
   .arrow-button {
     height: 30px;
