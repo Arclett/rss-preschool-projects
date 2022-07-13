@@ -47,7 +47,7 @@ body {
   margin-top: 4px;
 }
 .modal-nav {
-  position: absolute;
+  position: fixed;
   /* left: calc(100vw - 165px); */
   box-sizing: border-box;
   display: flex;
