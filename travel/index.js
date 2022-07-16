@@ -8,7 +8,7 @@ const overlayEl = document.querySelector(".overlay");
 const navEl = document.querySelectorAll(".nav-piece");
 
 //slider
-let gal;
+let gal, ellipseType, translate, delay, animationTime;
 
 const galImgZeroEl = document.querySelector("#destination-img-pos-0");
 const galImgFirstEl = document.querySelector("#destination-img-pos-1");
@@ -25,12 +25,16 @@ const galCaptFourEl = document.querySelector("#destination-capt-pos-4");
 const galWrapperEl = document.querySelector(".destination-gallery");
 const fwd = document.getElementById("#fwd");
 
+const arrowLeft = document.querySelector("#arrow-left");
+const arrowRight = document.querySelector("#arrow-right");
+
+let window_size = window.matchMedia("(max-width: 390px)");
+
 //ellipse
 
 const firstEllipse = document.querySelector(".ellipse:nth-child(1)");
 const secondEllipse = document.querySelector(".ellipse:nth-child(2)");
 const thirdEllipse = document.querySelector(".ellipse:nth-child(3)");
-console.log(firstEllipse, secondEllipse, thirdEllipse);
 
 const closeBurger = function () {
   modalEl.style.transform = "translateX(0%)";
@@ -53,7 +57,7 @@ console.log(
 
 //SLIDER
 
-function assignGal() {
+function assignDeskGal() {
   galImgZeroEl.src = `assets/img/${gal[0]}.jpg`;
   galImgFirstEl.src = `assets/img/${gal[1]}.jpg`;
   galImgSecondEl.src = `assets/img/${gal[2]}.jpg`;
@@ -67,59 +71,116 @@ function assignGal() {
   galCaptSecondEl.textContent = `${gal[2]}`;
   galCaptThirdEl.textContent = `${gal[3]}`;
   galCaptFourEl.textContent = `${gal[4]}`;
+}
 
-  if (gal[2] === "Japan") {
+//ellipses block
+function assignEllipse() {
+  if (window_size.matches) {
+    ellipseType = gal[1];
+  } else {
+    ellipseType = gal[2];
+  }
+  if (ellipseType === "Japan") {
     firstEllipse.style.background = "";
     secondEllipse.style.background = "#f2785c";
     thirdEllipse.style.background = "";
-  } else if (gal[2] === "Spain") {
+  } else if (ellipseType === "Spain") {
     firstEllipse.style.background = "#f2785c";
     secondEllipse.style.background = "";
     thirdEllipse.style.background = "";
-  } else if (gal[2] === "Usa") {
+  } else if (ellipseType === "Usa") {
     firstEllipse.style.background = "";
     secondEllipse.style.background = "";
     thirdEllipse.style.background = "#f2785c";
   }
 }
 
-function init() {
+function assignMobGal() {
+  galImgFirstEl.src = `assets/img/${gal[0]}Mob.jpg`;
+  galImgSecondEl.src = `assets/img/${gal[1]}Mob.jpg`;
+  galImgThirdEl.src = `assets/img/${gal[2]}Mob.jpg`;
+  galCaptFirstEl.textContent = `${gal[0]}`;
+  galCaptSecondEl.textContent = `${gal[1]}`;
+  galCaptThirdEl.textContent = `${gal[2]}`;
+}
+
+function initDesk() {
+  console.log("desktope");
   gal = ["Usa", "Spain", "Japan", "Usa", "Spain", "Japan"];
-  assignGal();
+  ellipseType = gal[2];
+  animationTime = "300";
+  delay = 300;
+  translate = "20.37";
+  assignDeskGal();
+  assignEllipse();
+}
+
+function initMobile() {
+  console.log("mobile");
+  gal = ["Usa", "Spain", "Japan"];
+  ellipseType = gal[1];
+  translate = "100";
+  animationTime = "600";
+  delay = 100;
+  assignMobGal();
+  assignEllipse();
+}
+
+function init() {
+  if (window_size.matches) {
+    initMobile();
+  } else {
+    initDesk();
+  }
 }
 init();
 
+function assignGal() {
+  if (window_size.matches) {
+    assignMobGal();
+    assignEllipse();
+    console.log("dada");
+  } else {
+    assignDeskGal();
+    assignEllipse();
+  }
+}
+
+window.addEventListener("resize", init);
+
 function forward() {
-  galWrapperEl.style.transition = "0.3s";
-  galWrapperEl.style.transform = "translateX(20.37%)";
+  galWrapperEl.style.transition = `${animationTime}ms`;
+  galWrapperEl.style.transform = `translateX(${translate}%)`;
   let galFwd = gal.splice(-1, 1);
   gal.unshift(galFwd[0]);
   setTimeout(function () {
     galWrapperEl.style.transition = "0s";
     assignGal();
     galWrapperEl.style.transform = "translateX(0%)";
-  }, 300);
+  }, delay);
 }
 
 function backward() {
-  galWrapperEl.style.transition = "0.3s";
-  galWrapperEl.style.transform = "translateX(-20.37%)";
+  galWrapperEl.style.transition = `${animationTime}ms`;
+  galWrapperEl.style.transform = `translateX(-${translate}%)`;
   let galFwd = gal.splice(0, 1);
   gal.push(galFwd[0]);
   setTimeout(function () {
     galWrapperEl.style.transition = "0s";
     assignGal();
     galWrapperEl.style.transform = "translateX(0%)";
-  }, 300);
+  }, delay);
 }
 
 galImgThirdEl.addEventListener("click", backward);
 galImgFirstEl.addEventListener("click", forward);
+arrowLeft.addEventListener("click", forward);
+arrowRight.addEventListener("click", backward);
 
 firstEllipse.addEventListener("click", function () {
-  if (gal[2] === "Japan") {
+  if (ellipseType === "Japan") {
     forward();
-  } else if (gal[2] === "Usa") {
+  } else if (ellipseType === "Usa") {
     forward();
     setTimeout(assignGal(), 300);
     setTimeout(forward(), 300);
@@ -127,17 +188,17 @@ firstEllipse.addEventListener("click", function () {
 });
 
 secondEllipse.addEventListener("click", function () {
-  if (gal[2] === "Spain") {
+  if (ellipseType === "Spain") {
     backward();
-  } else if (gal[2] === "Usa") {
+  } else if (ellipseType === "Usa") {
     forward();
   }
 });
 
 thirdEllipse.addEventListener("click", function () {
-  if (gal[2] === "Japan") {
+  if (ellipseType === "Japan") {
     backward();
-  } else if (gal[2] === "Spain") {
+  } else if (ellipseType === "Spain") {
     backward();
     setTimeout(assignGal(), 300);
     setTimeout(backward(), 300);

@@ -891,7 +891,7 @@ body {
   }
 }
 
-@media screen and (max-width: 390px) {
+@media (max-width: 390px) {
   body {
     background: url(assets/img/garrett-parker-DlkF4-dbCOU-unsplash2.jpg)
         no-repeat top,
@@ -1072,32 +1072,33 @@ body {
   }
 
   .destination-gallery {
-    width: 100vw;
+    width: 300%;
     height: 289px;
     align-items: center;
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
+    margin-left: -100%;
   }
 
-  .destination__destination-galery {
+  /* .destination__destination-galery {
     margin-right: auto;
     margin-left: auto;
-  }
+  } */
 
-  .places {
+  /* .places-gall {
     height: 210px;
-    width: 100vw;
-    position: absolute;
-    z-index: -2;
-  }
 
-  .places:nth-child(1),
+    width: 300%;
+    position: absolute;
+    z-index: 1;
+  } */
+
+  /* .places:nth-child(1),
   .places:nth-child(5) {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } */
 
   .hidden {
     display: none;
@@ -1106,7 +1107,7 @@ body {
   .slider-arrow {
     height: 24.9px;
     width: 14.4px;
-    margin: 11.3px;
+    margin: 26.3px;
   }
 
   .places__img {
@@ -1116,18 +1117,40 @@ body {
   }
 
   .arrow-container {
-    margin-top: 30px;
+    bottom: 223px;
+    /* margin-left: 103.85%;
+    margin-right: 103.85%; */
+    left: 0px;
     display: flex;
+    position: relative;
     justify-content: space-between;
-    width: 92.3vw;
+    width: 390px;
   }
 
   .places-caption {
     font-size: 20px;
-    margin-left: 25px;
-    margin-top: 8px;
+    margin-left: 28px;
+    /* margin-top: 8px; */
     height: 20px;
-    width: 92.3vw;
+    width: 92.3%;
+    position: relative;
+    bottom: 227px;
+    text-transform: uppercase;
+  }
+
+  .destination__wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    height: 289px;
+  }
+
+  .places {
+    width: 33.33%;
+    height: 100%;
+  }
+  .places:nth-child(1),
+  .places:nth-child(5) {
+    display: none;
   }
 
   .places__img {
@@ -1140,10 +1163,11 @@ body {
   .destination-slider {
     height: 20px;
     width: 80px;
+    z-index: 10;
   }
 
   .destination__destination-slider {
-    margin-top: -100px;
+    margin-top: -178px;
     margin-bottom: 40px;
   }
 
@@ -1157,8 +1181,12 @@ body {
     border: 2px solid #0d606f;
   }
 
-  .arrow_margin {
-    margin-top: -4px;
+  /* .arrow_margin {
+    margin: 15px;
+  } */
+
+  .slider-arrow:nth-child(1) {
+    transform: rotate(180deg);
   }
 
   .desktop {
