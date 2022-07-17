@@ -105,7 +105,6 @@ function assignMobGal() {
 }
 
 function initDesk() {
-  console.log("desktope");
   gal = ["Usa", "Spain", "Japan", "Usa", "Spain", "Japan"];
   ellipseType = gal[2];
   animationTime = "300";
@@ -116,7 +115,6 @@ function initDesk() {
 }
 
 function initMobile() {
-  console.log("mobile");
   gal = ["Usa", "Spain", "Japan"];
   ellipseType = gal[1];
   translate = "100";
@@ -139,7 +137,6 @@ function assignGal() {
   if (window_size.matches) {
     assignMobGal();
     assignEllipse();
-    console.log("dada");
   } else {
     assignDeskGal();
     assignEllipse();
