@@ -10,12 +10,96 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@400;700&family=Red+Hat+Text:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@400;700&family=Red+Hat+Text:wght@400;500&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
+    <div class="popup-wrapper">
+      <form class="popup-window regist hide">
+        <h2 class="popup-header login__popup-header signup">Create account</h2>
+        <div class="popup-element input-email">
+          <label class="input-label"
+            >E-mail<input
+              class="input email-input mail-sign"
+              type="email"
+              name="email"
+              required
+          /></label>
+        </div>
+        <div class="popup-element input-pass">
+          <label class="input-label"
+            >Password<input
+              class="input pass-input pass-sign"
+              type="password"
+              name="password"
+              required
+          /></label>
+        </div>
+        <div class="popup-element signup2">
+          <input type="submit" class="button sign" value="Sign Up" />
+        </div>
+        <div class="popup-element">
+          <div class="second-divider"></div>
+        </div>
+        <p class="opaq">
+          Already have an account?
+          <span class="popup-text popup-switch">Log in</span>
+        </p>
+      </form>
+
+      <form class="popup-window login">
+        <h2 class="popup-header login__popup-header">Log in to your account</h2>
+
+        <div class="popup-element facebook-login social-login log">
+          <img src="assets/svg/path14.svg" alt="facebook icon" />
+          <p class="login-caption fb">Sign In with Facebook</p>
+        </div>
+        <div class="popup-element google-login social-login log">
+          <img src="assets/svg/googlesvg.svg" alt="google icon" />
+          <p class="login-caption google">Sign In with Google</p>
+        </div>
+        <div class="popup-element first-divider">
+          <div class="line"></div>
+          <p class="or">or</p>
+          <div class="line"></div>
+        </div>
+        <div class="popup-element input-email">
+          <label class="input-label"
+            >E-mail<input
+              class="input email-input mail-log"
+              type="email"
+              name="email"
+              required
+          /></label>
+        </div>
+        <div class="popup-element input-pass">
+          <label class="input-label"
+            >Password<input
+              class="input pass-input pass-log"
+              type="password"
+              name="password"
+              required
+          /></label>
+        </div>
+        <div class="popup-element">
+          <input type="submit" value="Sign In" class="button sign log-btn" />
+        </div>
+        <div class="popup-element forgot log">
+          <p class="popup-text">Forgot Your Password?</p>
+        </div>
+        <div class="popup-element">
+          <div class="second-divider"></div>
+        </div>
+        <div class="popup-element no-acc">
+          <p class="opaq">
+            Don&#180;t have an account?
+            <span class="popup-text popup-switch">Register</span>
+          </p>
+        </div>
+      </form>
+    </div>
     <div class="overlay"></div>
     <header class="header">
       <div class="logo header__logo">
@@ -56,7 +140,9 @@
           </li>
         </ul>
       </nav>
-      <button class="button button__login" title="Login">Login</button>
+      <button class="button button__login popup-open" title="Login">
+        Login
+      </button>
       <div class="burger">
         <img
           class="burger-part"
@@ -105,7 +191,9 @@
               >Travel Stories</a
             >
           </div>
-          <div class="burger-nav"><p class="nav-piece">Account</p></div>
+          <div class="burger-nav">
+            <p class="nav-piece popup-open">Account</p>
+          </div>
           <div class="burger-nav">
             <a class="nav-piece" href="#social" title="Media links"
               >Social Media</a
@@ -180,58 +268,92 @@
           POPULAR DESTINATIONS
         </h2>
         <div class="destination__wrapper">
-          <div
-            class="destination-gallery destination__destination-galery desktop"
-          >
-            <div class="places destination-gallery__palces">
+          <div class="destination-gallery destination__destination-galery">
+            <div class="places destination-gallery__palces desktop">
               <img
                 class="places__img"
-                src="assets/img/Rectangle23.jpg"
-                alt="view from spain"
-              />
-              <p class="places-caption places__places-caption">SPAIN</p>
-            </div>
-            <div class="places destination-gallery__palces hidden">
-              <img
-                class="places__img"
-                src="assets/img/Rectangle24.jpg"
-                alt="view from japan"
-              />
-              <p class="places-caption places__places-caption">JAPAN</p>
-            </div>
-            <div class="places destination-gallery__palces hidden">
-              <img
-                class="places__img"
-                src="assets/img/Rectangle25.jpg"
+                src="assets/img/Usa.jpg"
                 alt="viev from USA"
+                id="destination-img-pos-0"
               />
-              <p class="places-caption places__places-caption">USA</p>
-            </div>
-          </div>
-          <div
-            class="destination-gallery destination__destination-galery mobile"
-          >
-            <p class="places-caption places__places-caption">SPAIN</p>
-            <div class="arrow-container">
-              <img
-                class="slider-arrow"
-                src="assets/svg/arrow-left.svg"
-                alt="arrow"
-              />
-              <img
-                class="slider-arrow"
-                src="assets/svg/arrow-right.svg"
-                alt="arrow"
-              />
+              <p
+                class="places-caption places__places-caption"
+                id="destination-capt-pos-0"
+              >
+                USA
+              </p>
             </div>
             <div class="places destination-gallery__palces">
               <img
                 class="places__img"
-                src="assets/img/Rectangle26.jpg"
+                src="assets/img/Spain.jpg"
                 alt="view from spain"
+                id="destination-img-pos-1"
               />
+              <p
+                class="places-caption places__places-caption"
+                id="destination-capt-pos-1"
+              >
+                SPAIN
+              </p>
+            </div>
+            <div class="places destination-gallery__palces">
+              <img
+                class="places__img"
+                src="assets/img/Japan.jpg"
+                alt="view from japan"
+                id="destination-img-pos-2"
+              />
+              <p
+                class="places-caption places__places-caption"
+                id="destination-capt-pos-2"
+              >
+                JAPAN
+              </p>
+            </div>
+            <div class="places destination-gallery__palces" id="fwd">
+              <img
+                class="places__img"
+                src="assets/img/Usa.jpg"
+                alt="viev from USA"
+                id="destination-img-pos-3"
+              />
+              <p
+                class="places-caption places__places-caption"
+                id="destination-capt-pos-3"
+              >
+                USA
+              </p>
+            </div>
+            <div class="places destination-gallery__palces desktop">
+              <img
+                class="places__img"
+                src="assets/img/Spain.jpg"
+                alt="view from spain"
+                id="destination-img-pos-4"
+              />
+              <p
+                class="places-caption places__places-caption"
+                id="destination-capt-pos-4"
+              >
+                SPAIN
+              </p>
             </div>
           </div>
+        </div>
+        <div class="arrow-container mobile">
+          <img
+            class="slider-arrow"
+            id="arrow-left"
+            src="assets/svg/arrow-right.svg"
+            alt="arrow"
+          />
+          <img
+            class="slider-arrow"
+            id="arrow-right"
+            src="assets/svg/arrow-right.svg"
+            alt="arrow"
+          />
         </div>
         <div class="destination-slider destination__destination-slider">
           <div class="ellipse"></div>
