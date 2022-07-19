@@ -53,6 +53,7 @@ const inputMailLog = document.querySelector(".mail-log");
 //burger function
 
 const closeBurger = function () {
+  document.querySelector("body").style.overflowY = "visible";
   modalEl.style.transform = "translateX(0%)";
   overlayEl.style.display = "none";
   popupWindow.style.transform = "translateY(0px)";
@@ -61,6 +62,7 @@ const closeBurger = function () {
 burgerEl.addEventListener("click", function () {
   modalEl.style.transform = "translateX(-100%)";
   overlayEl.style.display = "block";
+  document.querySelector("body").style.overflowY = "hidden";
 });
 
 crossEl.addEventListener("click", closeBurger);
@@ -225,6 +227,7 @@ thirdEllipse.addEventListener("click", function () {
   a.addEventListener("click", function () {
     popupWindow.style.transform = "translateY(750px)";
     overlayEl.style.display = "block";
+    document.querySelector("body").style.overflowY = "hidden";
   })
 );
 
