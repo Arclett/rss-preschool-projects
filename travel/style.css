@@ -20,10 +20,22 @@ body {
   text-decoration: none;
 }
 
+.button {
+  background: #0d606f;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  font-family: "Red Hat Text", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  border: #0d606f;
+}
+
 /* Burger */
 
 .overlay {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   z-index: 12;
@@ -48,7 +60,6 @@ body {
 }
 .modal-nav {
   position: fixed;
-  /* left: calc(100vw - 165px); */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -61,7 +72,6 @@ body {
   height: 250px;
   width: 165px;
   padding: 8px 15px 0px 8px;
-  /* transform: translateX(-100%); */
   transition: 0.3s;
 }
 
@@ -95,17 +105,225 @@ body {
   margin: 7.54px;
 }
 
-.button {
-  background: #0d606f;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+/*popup window*/
+
+.popup-wrapper {
+  position: fixed;
+  width: 45.13%;
+  max-width: 650px;
+  min-width: 300px;
+  top: -690px;
+  /* left: 27.43%; */
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 15;
+  transform: translateY(0%);
+  transition: all 0.9s;
+}
+
+.popup-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(177.09deg, #ffffff 6.15%, #0d606f 202.69%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+}
+
+.hide {
+  display: none;
+}
+
+.login {
+  height: 660px;
+}
+
+.regist {
+  position: relative;
+  top: 0px;
+  height: 436px;
+}
+
+.popup-element {
+  max-width: 560px;
+  width: 86.15%;
+}
+
+.popup-header {
+  font-family: "Aleo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #0d606f;
+
+  text-align: center;
+}
+
+.login__popup-header {
+  margin: 25px 0px 30px 0px;
+}
+
+.social-login {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 15.5px;
+  width: 86.15%;
+  height: 56px;
+
+  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08),
     0px 2px 3px rgba(13, 96, 111, 0.16);
   border-radius: 10px;
-  font-family: "Red Hat Text", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  color: #ffffff;
-  border: #0d606f;
 }
+
+.facebook-login {
+  background: #1877f2;
+}
+
+.google-login {
+  margin-top: 20px;
+  background: #ffffff;
+}
+
+.login-caption {
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.fb {
+  color: #ffffff;
+}
+
+.google {
+  color: #0d606f;
+}
+
+.first-divider {
+  display: flex;
+  justify-content: space-between;
+  width: 86.15%;
+}
+
+.line {
+  border-top: 1px solid rgba(13, 96, 111, 0.5);
+  width: 261px;
+  margin-top: 41px;
+}
+
+.or {
+  margin-top: 30px;
+  font-family: "Aleo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(13, 96, 111, 0.5);
+}
+
+.input {
+  width: 100%;
+  height: 54px;
+  background: #ffffff;
+  box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08),
+    inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  border: none;
+  margin-top: 5px;
+  font-family: "Aleo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #0d606f;
+}
+
+.input:invalid {
+  color: #f2785c;
+}
+
+.input-label {
+  font-family: "Aleo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #0d606f;
+  width: 99.5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-email {
+  margin-top: -11px;
+}
+
+.input-pass {
+  margin-top: 18px;
+}
+
+.sign {
+  width: 100%;
+  height: 54px;
+  margin-top: 25px;
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #ffffff;
+}
+
+.popup-text {
+  font-family: "Aleo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #0d606f;
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+}
+
+.forgot {
+  margin-top: -4px;
+  text-align: center;
+}
+
+.second-divider {
+  border-top: 1px solid rgba(13, 96, 111, 0.5);
+  margin-top: 8px;
+}
+
+.opaq {
+  font-family: "Aleo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: rgba(13, 96, 111, 0.5);
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+  margin-top: 21px;
+}
+
+.no-acc {
+  text-align: center;
+}
+
+.signup {
+  margin-bottom: 40px;
+}
+
+.signup2 {
+  margin-bottom: 15px;
+}
+
+/*header*/
 
 .section-header {
   font-family: "Red Hat Text", sans-serif;
@@ -119,8 +337,6 @@ body {
   border: 2px solid #ffffff;
   transition: 0.3s;
 }
-
-/*header*/
 
 .header {
   height: 90px;
@@ -532,12 +748,15 @@ body {
 
   .destination-gallery {
     gap: 60px;
-    width: 175%;
+    width: 294.44%;
+    /* 4240px */
     /* height: 943px; */
+    transform: translateX(0%);
+    transition: 0s;
   }
 
   .destination__destination-galery {
-    margin-left: -37.5%;
+    margin-left: -97.2%;
   }
 
   .destination__wrapper {
@@ -559,6 +778,7 @@ body {
   .places-caption {
     font-size: 32px;
     line-height: 42px;
+    text-transform: uppercase;
     z-index: 5;
   }
 
@@ -582,10 +802,6 @@ body {
   .destination__destination-slider {
     margin-top: 24px;
     margin-bottom: 40px;
-  }
-
-  .ellipse:nth-child(1) {
-    background-color: #f2785c;
   }
 
   .arrow-button {
@@ -747,6 +963,10 @@ body {
     display: flex;
   }
 
+  .popup-header {
+    font-size: 24px;
+  }
+
   .section-header {
     font-size: 30px;
     text-align: center;
@@ -887,7 +1107,7 @@ body {
   }
 }
 
-@media screen and (max-width: 390px) {
+@media (max-width: 390px) {
   body {
     background: url(assets/img/garrett-parker-DlkF4-dbCOU-unsplash2.jpg)
         no-repeat top,
@@ -923,6 +1143,11 @@ body {
     height: 251px;
     z-index: 5;
     background: linear-gradient(180deg, #0d606f 0%, rgba(13, 96, 111, 0) 25.1%);
+  }
+
+  .popup-wrapper {
+    width: 100vw;
+    margin: 0;
   }
 
   /* header */
@@ -1068,31 +1293,12 @@ body {
   }
 
   .destination-gallery {
-    width: 100vw;
+    width: 300%;
     height: 289px;
     align-items: center;
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
-  }
-
-  .destination__destination-galery {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .places {
-    height: 210px;
-    width: 100vw;
-    position: absolute;
-    z-index: -2;
-  }
-
-  .places:nth-child(1),
-  .places:nth-child(5) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: -100%;
   }
 
   .hidden {
@@ -1102,7 +1308,7 @@ body {
   .slider-arrow {
     height: 24.9px;
     width: 14.4px;
-    margin: 11.3px;
+    margin: 26.3px;
   }
 
   .places__img {
@@ -1112,18 +1318,37 @@ body {
   }
 
   .arrow-container {
-    margin-top: 30px;
+    bottom: 223px;
+    left: 0px;
     display: flex;
+    position: relative;
     justify-content: space-between;
-    width: 92.3vw;
+    width: 100%;
   }
 
   .places-caption {
     font-size: 20px;
-    margin-left: 25px;
-    margin-top: 8px;
+    margin-left: 28px;
     height: 20px;
-    width: 92.3vw;
+    width: 92.3%;
+    position: relative;
+    bottom: 227px;
+    text-transform: uppercase;
+  }
+
+  .destination__wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    height: 289px;
+  }
+
+  .places {
+    width: 33.33%;
+    height: 100%;
+  }
+  .places:nth-child(1),
+  .places:nth-child(5) {
+    display: none;
   }
 
   .places__img {
@@ -1136,10 +1361,11 @@ body {
   .destination-slider {
     height: 20px;
     width: 80px;
+    z-index: 10;
   }
 
   .destination__destination-slider {
-    margin-top: -100px;
+    margin-top: -178px;
     margin-bottom: 40px;
   }
 
@@ -1153,8 +1379,8 @@ body {
     border: 2px solid #0d606f;
   }
 
-  .arrow_margin {
-    margin-top: -4px;
+  .slider-arrow:nth-child(1) {
+    transform: rotate(180deg);
   }
 
   .desktop {
@@ -1171,10 +1397,6 @@ body {
     width: 8px;
     border-radius: 50%;
     background-color: rgba(242, 120, 92, 0.5);
-  }
-
-  .ellipse:nth-child(1) {
-    background-color: #f2785c;
   }
 
   .arrow-button {
