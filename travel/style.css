@@ -60,7 +60,6 @@ body {
 }
 .modal-nav {
   position: fixed;
-  /* left: calc(100vw - 165px); */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -73,7 +72,6 @@ body {
   height: 250px;
   width: 165px;
   padding: 8px 15px 0px 8px;
-  /* transform: translateX(-100%); */
   transition: 0.3s;
 }
 
@@ -110,16 +108,22 @@ body {
 /*popup window*/
 
 .popup-wrapper {
-  /* display: none; */
   position: fixed;
-  top: 10%;
-  right: 33%;
+  width: 45.13%;
+  max-width: 650px;
+  min-width: 300px;
+  top: -690px;
+  /* left: 27.43%; */
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 15;
+  transform: translateY(0%);
+  transition: all 0.9s;
 }
 
-.login {
-  height: 660px;
-  width: 650px;
+.popup-window {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,8 +132,23 @@ body {
   border-radius: 16px;
 }
 
+.hide {
+  display: none;
+}
+
+.login {
+  height: 660px;
+}
+
+.regist {
+  position: relative;
+  top: 0px;
+  height: 436px;
+}
+
 .popup-element {
-  width: 560px;
+  max-width: 560px;
+  width: 86.15%;
 }
 
 .popup-header {
@@ -152,7 +171,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 15.5px;
-  width: 560px;
+  width: 86.15%;
   height: 56px;
 
   box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08),
@@ -188,7 +207,7 @@ body {
 .first-divider {
   display: flex;
   justify-content: space-between;
-  width: 560px;
+  width: 86.15%;
 }
 
 .line {
@@ -208,7 +227,7 @@ body {
 }
 
 .input {
-  width: 557px;
+  width: 100%;
   height: 54px;
   background: #ffffff;
   box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08),
@@ -216,6 +235,16 @@ body {
   border-radius: 10px;
   border: none;
   margin-top: 5px;
+  font-family: "Aleo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #0d606f;
+}
+
+.input:invalid {
+  color: #f2785c;
 }
 
 .input-label {
@@ -225,6 +254,9 @@ body {
   font-size: 16px;
   line-height: 19px;
   color: #0d606f;
+  width: 99.5%;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-email {
@@ -236,7 +268,7 @@ body {
 }
 
 .sign {
-  width: 560px;
+  width: 100%;
   height: 54px;
   margin-top: 25px;
   font-family: "Red Hat Text";
@@ -281,6 +313,14 @@ body {
 
 .no-acc {
   text-align: center;
+}
+
+.signup {
+  margin-bottom: 40px;
+}
+
+.signup2 {
+  margin-bottom: 15px;
 }
 
 /*header*/
@@ -764,10 +804,6 @@ body {
     margin-bottom: 40px;
   }
 
-  /* .ellipse:nth-child(2) {
-    background-color: #f2785c;
-  } */
-
   .arrow-button {
     padding: 13.5px 31px;
     height: 59px;
@@ -925,6 +961,10 @@ body {
   .burger,
   .modal-nav {
     display: flex;
+  }
+
+  .popup-header {
+    font-size: 24px;
   }
 
   .section-header {
@@ -1105,6 +1145,11 @@ body {
     background: linear-gradient(180deg, #0d606f 0%, rgba(13, 96, 111, 0) 25.1%);
   }
 
+  .popup-wrapper {
+    width: 100vw;
+    margin: 0;
+  }
+
   /* header */
 
   .header {
@@ -1256,26 +1301,6 @@ body {
     margin-left: -100%;
   }
 
-  /* .destination__destination-galery {
-    margin-right: auto;
-    margin-left: auto;
-  } */
-
-  /* .places-gall {
-    height: 210px;
-
-    width: 300%;
-    position: absolute;
-    z-index: 1;
-  } */
-
-  /* .places:nth-child(1),
-  .places:nth-child(5) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
-
   .hidden {
     display: none;
   }
@@ -1294,19 +1319,16 @@ body {
 
   .arrow-container {
     bottom: 223px;
-    /* margin-left: 103.85%;
-    margin-right: 103.85%; */
     left: 0px;
     display: flex;
     position: relative;
     justify-content: space-between;
-    width: 390px;
+    width: 100%;
   }
 
   .places-caption {
     font-size: 20px;
     margin-left: 28px;
-    /* margin-top: 8px; */
     height: 20px;
     width: 92.3%;
     position: relative;
@@ -1357,10 +1379,6 @@ body {
     border: 2px solid #0d606f;
   }
 
-  /* .arrow_margin {
-    margin: 15px;
-  } */
-
   .slider-arrow:nth-child(1) {
     transform: rotate(180deg);
   }
@@ -1380,10 +1398,6 @@ body {
     border-radius: 50%;
     background-color: rgba(242, 120, 92, 0.5);
   }
-
-  /* .ellipse:nth-child(1) {
-    background-color: #f2785c;
-  } */
 
   .arrow-button {
     height: 30px;

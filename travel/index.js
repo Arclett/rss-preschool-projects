@@ -36,9 +36,26 @@ const firstEllipse = document.querySelector(".ellipse:nth-child(1)");
 const secondEllipse = document.querySelector(".ellipse:nth-child(2)");
 const thirdEllipse = document.querySelector(".ellipse:nth-child(3)");
 
+//popup
+
+const popupBtn = document.querySelectorAll(".popup-open");
+const popupWindow = document.querySelector(".popup-wrapper");
+const popupLogin = document.querySelector(".login");
+const popupRegist = document.querySelector(".regist");
+const popupSwitch = document.querySelectorAll(".popup-switch");
+const signBtn = document.querySelector(".sign");
+const inputPass = document.querySelector(".pass-sign");
+const inputMail = document.querySelector(".mail-sign");
+const logBtn = document.querySelector(".log-btn");
+const inputPassLog = document.querySelector(".pass-log");
+const inputMailLog = document.querySelector(".mail-log");
+
+//burger function
+
 const closeBurger = function () {
   modalEl.style.transform = "translateX(0%)";
   overlayEl.style.display = "none";
+  popupWindow.style.transform = "translateY(0px)";
 };
 
 burgerEl.addEventListener("click", function () {
@@ -52,7 +69,7 @@ overlayEl.addEventListener("click", closeBurger);
 [...navEl].map((nav) => nav.addEventListener("click", closeBurger));
 
 console.log(
-  "Ваша оценка - 85 баллов\nОтзыв по пунктам ТЗ:\nВыполненные пункты:\n1) Блок header\n2) Секция preview\n3) Секция steps\n4) Секция destinations\n5) Секция stories\n6) Блок footer\n7) нет полосы прокрутки при ширине страницы от 1440рх до 390px\n8) нет полосы прокрутки при ширине страницы от 390px до 320рх\n9) при ширине страницы 390рх панель навигации скрывается, появляется бургер-иконка\n10) при нажатии на бургер-иконку плавно появляется адаптивное меню\n11) адаптивное меню соответствует макету\n12) при нажатии на крестик адаптивное меню плавно скрывается уезжая за экран\n13) ссылки в адаптивном меню работают, обеспечивая плавную прокрутку по якорям (все, кроме Account, она пока просто закрывает меню)\n14) при клике по ссылке в адаптивном меню адаптивное меню плавно скрывается, также скрытие меню происходит если сделать клик вне данного окна\n"
+  'Ваша оценка - 125 баллов\nОтзыв по пунктам ТЗ:nВыполненные пункты:\n1) на десктоп варианте при клике на урезанную картинку слева или справа изображение меняется по принципу карусели(например если нажать правую картинку та что была в центре на уезжает налево, а та что была видна наполовину оказывается справа)\n2) Три точки внизу отображают "номер слайда", то есть каждому слайду соответствует свой кружочек, который становится активным при нахождении соответствующего ему слайда в центре. На мобильном варианте картинка одна, но поверх нее появляются стрелочки навигации (можно сделать как карусель или же затемнять кнопку если слайдер достиг края)\n3) Анимации плавного перемещения для слайдера\n4) логин попап соответствует верстке его закрытие происходит при клике вне попапа\n5) логин попап имеет 2 инпута (логин и пароль) при нажатии на кнопку Sign In показывается браузерный алерт с введенными данными (для реализации можно использовать тег)\n6) Нажатие на кнопку Register на Login попапе меняет разметку попапа на разметку Sign Up попапа согласно макету (То есть нажатие не закрывает модал а просто меняет его наполнение\n'
 );
 
 //SLIDER
@@ -199,5 +216,45 @@ thirdEllipse.addEventListener("click", function () {
     backward();
     setTimeout(assignGal(), 300);
     setTimeout(backward(), 300);
+  }
+});
+
+//popup function
+
+[...popupBtn].map((a) =>
+  a.addEventListener("click", function () {
+    popupWindow.style.transform = "translateY(750px)";
+    overlayEl.style.display = "block";
+  })
+);
+
+[...popupSwitch].map((a) =>
+  a.addEventListener("click", function () {
+    popupRegist.classList.toggle("hide");
+    popupLogin.classList.toggle("hide");
+  })
+);
+
+signBtn.addEventListener("click", function () {
+  if (inputMail.checkValidity() && inputPass.checkValidity()) {
+    window.alert(`Login:${inputMail.value}\nPassword:${inputPass.value}`);
+  } else if (!inputMail.checkValidity() && inputPass.checkValidity()) {
+    window.alert("Your Email is not valid!");
+  } else if (!inputPass.checkValidity() && inputMail.checkValidity()) {
+    window.alert("Your Password is not valid!");
+  } else {
+    window.alert("Your Email and Password is not valid! Try again :)");
+  }
+});
+
+logBtn.addEventListener("click", function () {
+  if (inputMailLog.checkValidity() && inputPassLog.checkValidity()) {
+    window.alert(`Login:${inputMailLog.value}\nPassword:${inputPassLog.value}`);
+  } else if (!inputMailLog.checkValidity() && inputPassLog.checkValidity()) {
+    window.alert("Your Email is not valid!");
+  } else if (!inputPassLog.checkValidity() && inputMailLog.checkValidity()) {
+    window.alert("Your Password is not valid!");
+  } else {
+    window.alert("Your Email and Password is not valid! Try again :)");
   }
 });
