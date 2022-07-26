@@ -57,6 +57,10 @@ const closeBurger = function () {
   modalEl.style.transform = "translateX(0%)";
   overlayEl.style.display = "none";
   popupWindow.style.transform = "translateY(0px)";
+  inputMail.value = "";
+  inputPass.value = "";
+  inputMailLog.value = "";
+  inputPassLog.value = "";
 };
 
 burgerEl.addEventListener("click", function () {
@@ -235,6 +239,10 @@ thirdEllipse.addEventListener("click", function () {
   a.addEventListener("click", function () {
     popupRegist.classList.toggle("hide");
     popupLogin.classList.toggle("hide");
+    inputMail.value = "";
+    inputPass.value = "";
+    inputMailLog.value = "";
+    inputPassLog.value = "";
   })
 );
 
