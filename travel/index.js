@@ -103,15 +103,15 @@ function assignEllipse() {
   } else {
     ellipseType = gal[2];
   }
-  if (ellipseType === "Japan") {
+  if (ellipseType === "japan") {
     firstEllipse.style.background = "";
     secondEllipse.style.background = "#f2785c";
     thirdEllipse.style.background = "";
-  } else if (ellipseType === "Spain") {
+  } else if (ellipseType === "spain") {
     firstEllipse.style.background = "#f2785c";
     secondEllipse.style.background = "";
     thirdEllipse.style.background = "";
-  } else if (ellipseType === "Usa") {
+  } else if (ellipseType === "usa") {
     firstEllipse.style.background = "";
     secondEllipse.style.background = "";
     thirdEllipse.style.background = "#f2785c";
@@ -128,7 +128,7 @@ function assignMobGal() {
 }
 
 function initDesk() {
-  gal = ["Usa", "Spain", "Japan", "Usa", "Spain", "Japan"];
+  gal = ["usa", "spain", "japan", "usa", "spain", "japan"];
   ellipseType = gal[2];
   animationTime = "300";
   delay = 300;
@@ -138,7 +138,7 @@ function initDesk() {
 }
 
 function initMobile() {
-  gal = ["Usa", "Spain", "Japan"];
+  gal = ["usa", "spain", "japan"];
   ellipseType = gal[1];
   translate = "100";
   animationTime = "600";
@@ -198,9 +198,9 @@ arrowLeft.addEventListener("click", forward);
 arrowRight.addEventListener("click", backward);
 
 firstEllipse.addEventListener("click", function () {
-  if (ellipseType === "Japan") {
+  if (ellipseType === "japan") {
     forward();
-  } else if (ellipseType === "Usa") {
+  } else if (ellipseType === "usa") {
     forward();
     setTimeout(assignGal(), 300);
     setTimeout(forward(), 300);
@@ -208,17 +208,17 @@ firstEllipse.addEventListener("click", function () {
 });
 
 secondEllipse.addEventListener("click", function () {
-  if (ellipseType === "Spain") {
+  if (ellipseType === "spain") {
     backward();
-  } else if (ellipseType === "Usa") {
+  } else if (ellipseType === "usa") {
     forward();
   }
 });
 
 thirdEllipse.addEventListener("click", function () {
-  if (ellipseType === "Japan") {
+  if (ellipseType === "japan") {
     backward();
-  } else if (ellipseType === "Spain") {
+  } else if (ellipseType === "spain") {
     backward();
     setTimeout(assignGal(), 300);
     setTimeout(backward(), 300);
