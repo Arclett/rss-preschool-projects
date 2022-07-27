@@ -81,11 +81,11 @@ console.log(
 //SLIDER
 
 function assignDeskGal() {
-  galImgZeroEl.src = `assets/img/${gal[0]}.jpg`;
-  galImgFirstEl.src = `assets/img/${gal[1]}.jpg`;
-  galImgSecondEl.src = `assets/img/${gal[2]}.jpg`;
-  galImgThirdEl.src = `assets/img/${gal[3]}.jpg`;
-  galImgFourEl.src = `assets/img/${gal[4]}.jpg`;
+  galImgZeroEl.src = `assets/img/slider/${gal[0]}.jpg`;
+  galImgFirstEl.src = `assets/img/slider/${gal[1]}.jpg`;
+  galImgSecondEl.src = `assets/img/slider/${gal[2]}.jpg`;
+  galImgThirdEl.src = `assets/img/slider/${gal[3]}.jpg`;
+  galImgFourEl.src = `assets/img/slider/${gal[4]}.jpg`;
 
   //caption
 
@@ -119,9 +119,9 @@ function assignEllipse() {
 }
 
 function assignMobGal() {
-  galImgFirstEl.src = `assets/img/${gal[0]}Mob.jpg`;
-  galImgSecondEl.src = `assets/img/${gal[1]}Mob.jpg`;
-  galImgThirdEl.src = `assets/img/${gal[2]}Mob.jpg`;
+  galImgFirstEl.src = `assets/img/slider/${gal[0]}Mob.jpg`;
+  galImgSecondEl.src = `assets/img/slider/${gal[1]}Mob.jpg`;
+  galImgThirdEl.src = `assets/img/slider/${gal[2]}Mob.jpg`;
   galCaptFirstEl.textContent = `${gal[0]}`;
   galCaptSecondEl.textContent = `${gal[1]}`;
   galCaptThirdEl.textContent = `${gal[2]}`;
