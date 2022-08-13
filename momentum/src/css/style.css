@@ -21,6 +21,10 @@ body {
   transition: background-image 1s ease-in-out;
 }
 
+.hidden {
+  display: none;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -35,12 +39,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 120px;
+  width: 180px;
   margin-bottom: 28px;
 }
 
 .play-list {
   text-align: left;
+  list-style: none;
+  margin-top: 10px;
 }
 
 .play-item {
@@ -67,6 +73,30 @@ body {
 
 .item-active::before {
   color: #c5b358;
+}
+
+.song-wrapper {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.song-time {
+  display: flex;
+  justify-content: space-between;
+}
+
+.volume-container {
+  display: flex;
+  width: 30%;
+  height: 6px;
+}
+
+.volume-percentage {
+  background-color: grey;
+  height: 100%;
 }
 
 .player-icon,
@@ -116,6 +146,36 @@ body {
 
 .play-next {
   background-image: url("../assets/svg/play-next.svg");
+}
+
+.timeline {
+  background: white;
+  width: 100%;
+  cursor: pointer;
+  height: 6px;
+}
+
+.volume-container {
+  width: 20px;
+  height: 18px;
+}
+
+.volume-button {
+  height: 18px;
+  width: 20px;
+  background-image: url("../assets/svg/volume.svg");
+}
+
+.volume-slider {
+  width: 40%;
+  background: white;
+  display: none;
+  height: 6px;
+}
+
+.progress {
+  background: grey;
+  height: 100%;
 }
 
 .weather {

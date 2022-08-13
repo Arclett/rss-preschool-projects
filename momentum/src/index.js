@@ -53,3 +53,74 @@ getQuotes();
 
 const changeQuoteElement = document.querySelector(".change-quote");
 changeQuoteElement.addEventListener("click", changeQuote);
+
+//AUDIO
+
+import {
+  startTrack,
+  createPlayList,
+  audio,
+  playAudio,
+  lengthElement,
+  playElement,
+  timeline,
+  secToMin,
+  playBtn,
+  playPauseElement,
+} from "./audio";
+
+startTrack();
+createPlayList();
+
+audio.addEventListener("loadeddata", function () {
+  const audioLength = Math.floor(audio.duration);
+  lengthElement.textContent = `${secToMin(audioLength)}`;
+});
+
+playPauseElement.addEventListener("click", playBtn);
+
+timeline.addEventListener("click", (e) => {
+  const timelineWidth = window.getComputedStyle(timeline).width;
+  const timeToSeek = (e.offsetX / parseInt(timelineWidth)) * audio.duration;
+  audio.currentTime = timeToSeek;
+});
+
+setInterval(() => {
+  const progress = document.querySelector(".progress");
+  progress.style.width = (audio.currentTime / audio.duration) * 100 + "%";
+  document.querySelector(".current").textContent = secToMin(audio.currentTime);
+}, 500);
+
+const volumeBtn = document.querySelector(".volume-button");
+const volumeSliderElement = document.querySelector(".volume-slider");
+const songElement = document.querySelector(".song-wrapper");
+
+volumeBtn.addEventListener("mouseover", function () {
+  volumeSliderElement.style.display = "block";
+});
+
+volumeSliderElement.addEventListener("mouseleave", function () {
+  volumeSliderElement.style.display = "none";
+});
+
+songElement.addEventListener("mouseleave", function () {
+  volumeSliderElement.style.display = "none";
+});
+
+const volumeSlider = document.querySelector(".volume-slider");
+volumeSlider.addEventListener("click", (e) => {
+  const sliderWidth = window.getComputedStyle(volumeSlider).width;
+  const newVolume = e.offsetX / parseInt(sliderWidth);
+  audio.volume = newVolume;
+  document.querySelector(".volume-percentage").style.width =
+    newVolume * 100 + "%";
+});
+
+volumeBtn.addEventListener("click", function () {
+  audio.muted = !audio.muted;
+  if (audio.muted) {
+    volumeBtn.style.backgroundImage = 'url("../assets/svg/mute.svg")';
+  } else {
+    volumeBtn.style.backgroundImage = 'url("../assets/svg/volume.svg")';
+  }
+});
