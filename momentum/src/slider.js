@@ -1,4 +1,5 @@
 import { getTimeOfDay } from "./dateTime";
+import { currentlanguage, settings } from "./settings";
 const body = document.querySelector("body");
 
 let timeOfDay, randomNum;
@@ -10,15 +11,22 @@ const getRandomNum = function () {
 randomNum = getRandomNum();
 
 export const setBg = function () {
-  timeOfDay = getTimeOfDay().toLowerCase();
+  const x = ["night", "morning", "afternoon", "evening"];
+  timeOfDay = getTimeOfDay();
+  let y;
+  if (currentlanguage === "en") {
+    y = settings.timeOfDayEn.indexOf(timeOfDay);
+  } else {
+    y = settings.timeOfDayRu.indexOf(timeOfDay);
+  }
   const img = new Image();
-  img.src = `https://raw.githubusercontent.com/Arclett/stage1-tasks/assets/images/${timeOfDay}/${randomNum
-    .toString()
-    .padStart(2, "0")}.jpg`;
+  img.src = `https://raw.githubusercontent.com/Arclett/stage1-tasks/assets/images/${
+    x[y]
+  }/${randomNum.toString().padStart(2, "0")}.jpg`;
   img.addEventListener("load", function () {
-    body.style.backgroundImage = `url('https://raw.githubusercontent.com/Arclett/stage1-tasks/assets/images/${timeOfDay}/${randomNum
-      .toString()
-      .padStart(2, "0")}.jpg')`;
+    body.style.backgroundImage = `url('https://raw.githubusercontent.com/Arclett/stage1-tasks/assets/images/${
+      x[y]
+    }/${randomNum.toString().padStart(2, "0")}.jpg')`;
   });
 };
 

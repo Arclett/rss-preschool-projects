@@ -22,7 +22,13 @@ body {
 }
 
 .hidden {
-  display: none;
+  opacity: 0 !important;
+  transition: 0.4s;
+}
+
+.visible {
+  opacity: 1;
+  transition: 0.4s;
 }
 
 .header {
@@ -44,35 +50,52 @@ body {
 }
 
 .play-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
   text-align: left;
   list-style: none;
   margin-top: 10px;
+  color: lightgrey;
 }
 
 .play-item {
   position: relative;
-  padding: 5px;
-  padding-left: 20px;
-  list-style: none;
   opacity: 0.8;
   cursor: pointer;
   transition: 0.3s;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.play-list-button {
+  position: relative;
+  z-index: 10;
+  width: 18px;
+  height: 18px;
+  border: 0;
+  background: url("../assets/svg/play(1).svg") no-repeat;
 }
 
 .play-item:hover {
   opacity: 1;
 }
 
-.play-item::before {
+/* .play-item::before {
   content: "\2713";
   position: absolute;
   left: 0;
   top: 2px;
   font-weight: 900;
-}
+} */
 
-.item-active::before {
+/* .item-active::before {
   color: #c5b358;
+} */
+
+.song-name {
+  margin-top: 5px;
 }
 
 .song-wrapper {
@@ -95,7 +118,7 @@ body {
 }
 
 .volume-percentage {
-  background-color: grey;
+  background-color: white;
   height: 100%;
 }
 
@@ -149,7 +172,7 @@ body {
 }
 
 .timeline {
-  background: white;
+  background: grey;
   width: 100%;
   cursor: pointer;
   height: 6px;
@@ -168,13 +191,14 @@ body {
 
 .volume-slider {
   width: 40%;
-  background: white;
+  background: grey;
   display: none;
   height: 6px;
 }
 
 .progress {
-  background: grey;
+  margin-top: -5px;
+  background: white;
   height: 100%;
 }
 
@@ -302,9 +326,9 @@ body {
 
 .footer {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
   width: 100%;
   height: 30vh;
   min-height: 160px;
@@ -322,6 +346,58 @@ body {
 
 .author {
   min-height: 20px;
+}
+
+.option {
+  background: url(../assets/svg/options.svg);
+  width: 30px;
+  height: 30px;
+}
+
+.option-burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  width: 200px;
+  background-color: lightgray;
+  opacity: 0.8;
+  left: 15px;
+  bottom: 50px;
+  color: black;
+}
+
+.settings {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.element {
+  color: black;
+  height: 19px;
+  font-size: 18px;
+  margin: 10px 0 0 10px;
+}
+
+.input-element {
+  margin-right: 5px;
+}
+
+.divider {
+  border-top: 2px solid black;
+}
+
+.sources {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {

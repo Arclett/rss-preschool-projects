@@ -10,7 +10,7 @@
   </head>
   <body>
     <header class="header">
-      <div class="player">
+      <div class="player visible">
         <div class="player-controls">
           <button class="play-prev player-icon"></button>
           <button class="play player-icon"></button>
@@ -35,8 +35,8 @@
         </div>
         <ul class="play-list"></ul>
       </div>
-      <div class="weather">
-        <input type="text" class="city" />
+      <div class="weather visible">
+        <input type="text" class="city" placeholder="[Enter city]" />
         <i class="weather-icon owf"></i>
         <div class="weather-error"></div>
         <div class="description-container">
@@ -52,19 +52,94 @@
         <button class="slide-prev slider-icon"></button>
         <button class="slide-next slider-icon"></button>
       </div>
-      <time class="time"></time>
-      <date class="date"></date>
-      <div class="greeting-container">
+      <time class="time visible"></time>
+      <date class="date visible"></date>
+      <div class="greeting-container greetings visible">
         <span class="greeting"></span>
         <input type="text" class="username" placeholder="[Enter name]" />
       </div>
     </main>
     <footer class="footer">
-      <button class="change-quote"></button>
-      <div>
+      <div class="option"></div>
+      <div class="option-burger">
+        <div class="elements settings">
+          <label class="element"
+            ><input
+              type="checkbox"
+              name="player"
+              class="input-element player-inp"
+              checked
+            />Player</label
+          >
+          <label class="element"
+            ><input
+              type="checkbox"
+              name="weather"
+              class="input-element weather-inp"
+              checked
+            />Weather</label
+          >
+          <label class="element"
+            ><input
+              type="checkbox"
+              name="time"
+              class="input-element time-inp"
+              checked
+            />Time</label
+          >
+          <label class="element"
+            ><input
+              type="checkbox"
+              name="date"
+              class="input-element date-inp"
+              checked
+            />Date</label
+          >
+          <label class="element"
+            ><input
+              type="checkbox"
+              name="greetings"
+              class="input-element greetings-inp"
+              checked
+            />Greeteng</label
+          >
+          <label class="element"
+            ><input
+              type="checkbox"
+              name="quotes"
+              class="input-element quotes-inp"
+              checked
+            />Quote</label
+          >
+        </div>
+        <div class="divider"></div>
+        <div class="gallery-settings settings">
+          <div class="sources">
+            <label><input type="radio" />GitHub</label>
+            <label><input type="radio" />Unsplash API</label>
+            <label><input type="radio" />Flickr API</label>
+          </div>
+          <fieldset class="tags">
+            <span class="curent-tags">No tags yet...</span>
+            <input type="text" />
+            <input type="submit" value="Add tags" />
+            <input type="submit" value="Remove tags" />
+          </fieldset>
+        </div>
+        <div class="divider"></div>
+        <div class="'languge settings">
+          <label
+            ><input type="radio" class="en" name="lang" checked />English</label
+          >
+          <label><input type="radio" class="ru" name="lang" />Russian</label>
+        </div>
+      </div>
+      <div class="quotes visible">
+        <button class="change-quote"></button>
         <div class="quote"></div>
         <div class="author"></div>
       </div>
+      <div class="links"></div>
     </footer>
   </body>
 </html>

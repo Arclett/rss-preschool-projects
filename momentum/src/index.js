@@ -60,17 +60,18 @@ import {
   startTrack,
   createPlayList,
   audio,
-  playAudio,
   lengthElement,
-  playElement,
   timeline,
   secToMin,
   playBtn,
   playPauseElement,
+  nextTrack,
+  prevTrack,
+  playTime,
 } from "./audio";
 
-startTrack();
 createPlayList();
+startTrack();
 
 audio.addEventListener("loadeddata", function () {
   const audioLength = Math.floor(audio.duration);
@@ -123,4 +124,54 @@ volumeBtn.addEventListener("click", function () {
   } else {
     volumeBtn.style.backgroundImage = 'url("../assets/svg/volume.svg")';
   }
+});
+
+const playNextElement = document.querySelector(".play-next");
+const playPrevElement = document.querySelector(".play-prev");
+
+playNextElement.addEventListener("click", nextTrack);
+playPrevElement.addEventListener("click", prevTrack);
+
+audio.addEventListener("ended", nextTrack);
+
+//OPTION
+
+//show hide elements
+
+import { settings, hideElement, currentLanguge, setLang } from "./settings";
+
+settings.elements.forEach(function (e) {
+  const el = document.querySelector(`.${e}-inp`);
+  el.addEventListener("click", function () {
+    if (!el.checked) {
+      let x = [];
+      settings.elements.forEach(function (elem) {
+        if (!el.classList.contains(`${elem}-inp`)) {
+          x.push(elem);
+        }
+      });
+      settings.elements = x;
+      hideElement();
+    } else {
+      settings.elements.push(`${el.getAttribute("name")}`);
+      el.checked = true;
+      hideElement();
+    }
+  });
+});
+
+//Language
+const enElement = document.querySelector(".en");
+enElement.addEventListener("click", function () {
+  if (enElement.checked) settings.language = "en";
+  setLang();
+  getWeather();
+});
+
+const ruElement = document.querySelector(".ru");
+ruElement.addEventListener("click", function () {
+  if (ruElement.checked) settings.language = "ru";
+  setLang();
+  console.log(settings.language);
+  getWeather();
 });
