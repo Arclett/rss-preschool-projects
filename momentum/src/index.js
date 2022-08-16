@@ -2,14 +2,25 @@ import { showTimeDate, nameElement } from "./dateTime";
 import { setBg, getSlideNext, getSliderPrev } from "./slider";
 import { getWeather, cityElement } from "./weather";
 import { getQuotes, changeQuote } from "./quotes";
-import {
-  settings,
-  hideElement,
-  setLang,
-  hideCheckbox,
-  currentlanguage,
-  allElementsEn,
-} from "./settings";
+import { settings, hideElement, setLang, hideCheckbox } from "./settings";
+const optionElemet = document.querySelector(".option");
+const optionBurgerElement = document.querySelector(".option-burger");
+const addTagElement = document.querySelector(".add-tags");
+const tagInputElement = document.querySelector(".tag-input");
+const currentTagSpanElement = document.querySelector(".current-tags-span");
+const slideNextElement = document.querySelector(".slide-next");
+const slidePrevElement = document.querySelector(".slide-prev");
+const changeQuoteElement = document.querySelector(".change-quote");
+const volumeBtn = document.querySelector(".volume-button");
+const volumeSliderElement = document.querySelector(".volume-slider");
+const songElement = document.querySelector(".song-wrapper");
+const playNextElement = document.querySelector(".play-next");
+const playPrevElement = document.querySelector(".play-prev");
+const ruElement = document.querySelector(".ru");
+const enElement = document.querySelector(".en");
+const githubSourceElement = document.querySelector(".github");
+const unplashSourceElement = document.querySelector(".unplash");
+const flickrSourceElement = document.querySelector(".flickr");
 
 //Date Time and Greeting
 
@@ -77,9 +88,6 @@ window.addEventListener("load", getLocalStorage);
 
 setBg();
 
-const slideNextElement = document.querySelector(".slide-next");
-const slidePrevElement = document.querySelector(".slide-prev");
-
 slideNextElement.addEventListener("click", getSlideNext);
 slidePrevElement.addEventListener("click", getSliderPrev);
 
@@ -91,7 +99,6 @@ cityElement.addEventListener("change", getWeather);
 //Quotes
 getQuotes();
 
-const changeQuoteElement = document.querySelector(".change-quote");
 changeQuoteElement.addEventListener("click", changeQuote);
 
 //AUDIO
@@ -107,8 +114,6 @@ import {
   playPauseElement,
   nextTrack,
   prevTrack,
-  playTime,
-  playAudio,
 } from "./audio";
 
 createPlayList();
@@ -132,10 +137,6 @@ setInterval(() => {
   progress.style.width = (audio.currentTime / audio.duration) * 100 + "%";
   document.querySelector(".current").textContent = secToMin(audio.currentTime);
 }, 500);
-
-const volumeBtn = document.querySelector(".volume-button");
-const volumeSliderElement = document.querySelector(".volume-slider");
-const songElement = document.querySelector(".song-wrapper");
 
 volumeBtn.addEventListener("mouseover", function () {
   volumeSliderElement.style.display = "block";
@@ -166,9 +167,6 @@ volumeBtn.addEventListener("click", function () {
     volumeBtn.style.backgroundImage = 'url("../assets/svg/volume.svg")';
   }
 });
-
-const playNextElement = document.querySelector(".play-next");
-const playPrevElement = document.querySelector(".play-prev");
 
 playNextElement.addEventListener("click", nextTrack);
 playPrevElement.addEventListener("click", prevTrack);
@@ -203,7 +201,7 @@ settings.elements.forEach(function (e) {
 });
 
 //Language
-const enElement = document.querySelector(".en");
+
 enElement.addEventListener("click", function () {
   if (enElement.checked) settings.language = "en";
   setLang();
@@ -211,7 +209,6 @@ enElement.addEventListener("click", function () {
   getQuotes();
 });
 
-const ruElement = document.querySelector(".ru");
 ruElement.addEventListener("click", function () {
   if (ruElement.checked) settings.language = "ru";
   setLang();
@@ -219,7 +216,7 @@ ruElement.addEventListener("click", function () {
   getQuotes();
 });
 
-const githubSourceElement = document.querySelector(".github");
+//SETTINGS
 
 githubSourceElement.addEventListener("click", function () {
   if (githubSourceElement.checked) settings.photoSource = "github";
@@ -227,15 +224,11 @@ githubSourceElement.addEventListener("click", function () {
   hideTags();
 });
 
-const unplashSourceElement = document.querySelector(".unplash");
-
 unplashSourceElement.addEventListener("click", function () {
   if (unplashSourceElement.checked) settings.photoSource = "unplash";
   setBg();
   hideTags();
 });
-
-const flickrSourceElement = document.querySelector(".flickr");
 
 flickrSourceElement.addEventListener("click", function () {
   if (flickrSourceElement.checked) settings.photoSource = "flickr";
@@ -251,9 +244,6 @@ const hideTags = function () {
   }
 };
 hideTags();
-const addTagElement = document.querySelector(".add-tags");
-const tagInputElement = document.querySelector(".tag-input");
-const currentTagSpanElement = document.querySelector(".current-tags-span");
 
 const startTags = function () {
   currentTagSpanElement.textContent = settings.tagsPhoto;
@@ -269,8 +259,6 @@ addTagElement.addEventListener("click", function () {
   setBg();
 });
 
-const optionElemet = document.querySelector(".option");
-const optionBurgerElement = document.querySelector(".option-burger");
 optionElemet.addEventListener("click", function () {
   optionBurgerElement.classList.toggle("invis");
 });
