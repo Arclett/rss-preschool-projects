@@ -1,10 +1,12 @@
 const quoteElement = document.querySelector(".quote");
 const authorElement = document.querySelector(".author");
 
+import { currentlanguage } from "./settings";
+
 let quoteNum, dataLength;
 
 export async function getQuotes() {
-  const quotes = "data.json";
+  const quotes = `${currentlanguage === "en" ? "dataEn.json" : "dataRu.json"}`;
   const res = await fetch(quotes);
   const data = await res.json();
   dataLength = data.length;

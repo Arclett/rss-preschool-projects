@@ -2,6 +2,14 @@ import { showTimeDate, nameElement } from "./dateTime";
 import { setBg, getSlideNext, getSliderPrev } from "./slider";
 import { getWeather, cityElement } from "./weather";
 import { getQuotes, changeQuote } from "./quotes";
+import {
+  settings,
+  hideElement,
+  setLang,
+  hideCheckbox,
+  currentlanguage,
+  allElementsEn,
+} from "./settings";
 
 //Date Time and Greeting
 
@@ -12,6 +20,10 @@ showTimeDate();
 function setLocalStorage() {
   localStorage.setItem("name", nameElement.value);
   localStorage.setItem("city", cityElement.value);
+  localStorage.setItem("settings-elements", settings.elements);
+  localStorage.setItem("settings-lang", settings.language);
+  localStorage.setItem("settings-photo-source", settings.photoSource);
+  localStorage.setItem("settings-tags-photo", settings.tagsPhoto);
 }
 
 window.addEventListener("beforeunload", setLocalStorage);
@@ -29,6 +41,34 @@ function getLocalStorage() {
   if (localStorage.getItem("city")) {
     cityElement.value = localStorage.getItem("city");
     getWeather();
+  }
+  if (localStorage.getItem("settings-elements")) {
+    settings.elements = localStorage.getItem("settings-elements").split(",");
+    hideElement();
+    hideCheckbox();
+  }
+  if (localStorage.getItem("settings-lang")) {
+    settings.language = localStorage.getItem("settings-lang");
+    document.querySelector(
+      `.${localStorage.getItem("settings-lang")}`
+    ).checked = true;
+    setLang();
+    getQuotes();
+  }
+  if (localStorage.getItem("settings-tags-photo", settings.tagsPhoto)) {
+    settings.tagsPhoto = localStorage.getItem("settings-tags-photo");
+    currentTagSpanElement.textContent = localStorage.getItem(
+      "settings-tags-photo"
+    );
+    startTags();
+  }
+  if (localStorage.getItem("settings-photo-source")) {
+    settings.photoSource = localStorage.getItem("settings-photo-source");
+    document.querySelector(
+      `.${localStorage.getItem("settings-photo-source")}`
+    ).checked = true;
+    setBg();
+    hideTags();
   }
 }
 window.addEventListener("load", getLocalStorage);
@@ -68,6 +108,7 @@ import {
   nextTrack,
   prevTrack,
   playTime,
+  playAudio,
 } from "./audio";
 
 createPlayList();
@@ -138,7 +179,8 @@ audio.addEventListener("ended", nextTrack);
 
 //show hide elements
 
-import { settings, hideElement, currentLanguge, setLang } from "./settings";
+hideElement();
+hideCheckbox();
 
 settings.elements.forEach(function (e) {
   const el = document.querySelector(`.${e}-inp`);
@@ -166,12 +208,73 @@ enElement.addEventListener("click", function () {
   if (enElement.checked) settings.language = "en";
   setLang();
   getWeather();
+  getQuotes();
 });
 
 const ruElement = document.querySelector(".ru");
 ruElement.addEventListener("click", function () {
   if (ruElement.checked) settings.language = "ru";
   setLang();
-  console.log(settings.language);
   getWeather();
+  getQuotes();
+});
+
+const githubSourceElement = document.querySelector(".github");
+
+githubSourceElement.addEventListener("click", function () {
+  if (githubSourceElement.checked) settings.photoSource = "github";
+  setBg();
+  hideTags();
+});
+
+const unplashSourceElement = document.querySelector(".unplash");
+
+unplashSourceElement.addEventListener("click", function () {
+  if (unplashSourceElement.checked) settings.photoSource = "unplash";
+  setBg();
+  hideTags();
+});
+
+const flickrSourceElement = document.querySelector(".flickr");
+
+flickrSourceElement.addEventListener("click", function () {
+  if (flickrSourceElement.checked) settings.photoSource = "flickr";
+  setBg();
+  hideTags();
+});
+
+const hideTags = function () {
+  if (!githubSourceElement.checked) {
+    document.querySelector(".tags").style.display = "block";
+  } else {
+    document.querySelector(".tags").style.display = "none";
+  }
+};
+hideTags();
+const addTagElement = document.querySelector(".add-tags");
+const tagInputElement = document.querySelector(".tag-input");
+const currentTagSpanElement = document.querySelector(".current-tags-span");
+
+const startTags = function () {
+  currentTagSpanElement.textContent = settings.tagsPhoto;
+};
+
+const setTags = function () {
+  currentTagSpanElement.textContent = tagInputElement.value;
+  settings.tagsPhoto = tagInputElement.value.toLowerCase();
+};
+
+addTagElement.addEventListener("click", function () {
+  setTags();
+  setBg();
+});
+
+const optionElemet = document.querySelector(".option");
+const optionBurgerElement = document.querySelector(".option-burger");
+optionElemet.addEventListener("click", function () {
+  optionBurgerElement.classList.toggle("invis");
+});
+
+optionBurgerElement.addEventListener("mouseleave", function () {
+  optionBurgerElement.classList.add("invis");
 });

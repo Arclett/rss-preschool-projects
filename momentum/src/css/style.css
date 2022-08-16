@@ -26,6 +26,10 @@ body {
   transition: 0.4s;
 }
 
+.invis {
+  display: none !important;
+}
+
 .visible {
   opacity: 1;
   transition: 0.4s;
@@ -349,7 +353,7 @@ body {
 }
 
 .option {
-  background: url(../assets/svg/options.svg);
+  background: url(../assets/svg/settings.svg);
   width: 30px;
   height: 30px;
 }
@@ -398,6 +402,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.tags {
+  display: none;
 }
 
 @media (max-width: 768px) {

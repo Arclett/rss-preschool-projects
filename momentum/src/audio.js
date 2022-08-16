@@ -44,7 +44,7 @@ export const playBtn = function () {
     resetBtn();
     document.querySelector(
       `.button-${current + 1}`
-    ).style.background = `url("../assets/svg/pause(1).svg") no-repeat`;
+    ).style.background = `url("../assets/svg/pauseside.svg") no-repeat`;
     isPlay = true;
   } else {
     audio.pause();
@@ -98,7 +98,6 @@ export const createPlayList = function () {
         songNameElement.textContent = `${el.title}`;
         lengthElement.textContent = `${el.duration}`;
         playAudio();
-        console.log("kok");
       });
     document
       .querySelector(
@@ -180,12 +179,11 @@ const sideButton = function (elem) {
       audio.currentTime = playTime;
       audio.play();
       highLiteTrack();
-      console.log("play old");
       playPauseElement.classList.remove("play");
       playPauseElement.classList.add("pause");
       document.querySelector(
         `.button-${current + 1}`
-      ).style.background = `url("../assets/svg/pause(1).svg") no-repeat`;
+      ).style.background = `url("../assets/svg/pauseside.svg") no-repeat`;
       isPlay = true;
     } else {
       resetBtn();
@@ -198,18 +196,16 @@ const sideButton = function (elem) {
       audio.currentTime = playTime;
       audio.play();
       highLiteTrack();
-      console.log("play new");
       playPauseElement.classList.remove("play");
       playPauseElement.classList.add("pause");
       document.querySelector(
         `.button-${elem.classList[1].slice(-1)}`
-      ).style.background = `url("../assets/svg/pause(1).svg") no-repeat`;
+      ).style.background = `url("../assets/svg/pauseside.svg") no-repeat`;
       isPlay = true;
     }
   } else {
     if (elem.classList.contains(`button-${current + 1}`)) {
       audio.pause();
-      console.log("pause old");
       playTime = audio.currentTime;
       isPlay = false;
       playPauseElement.classList.add("play");
@@ -218,7 +214,6 @@ const sideButton = function (elem) {
         `.button-${current + 1}`
       ).style.background = `url("../assets/svg/play(1).svg") no-repeat`;
     } else {
-      console.log(current);
       audio.pause();
       resetBtn();
       songNameElement.textContent = `${
@@ -230,8 +225,7 @@ const sideButton = function (elem) {
       audio.currentTime = 0;
       audio.play();
       highLiteTrack();
-      console.log("play");
-      elem.style.background = `url("../assets/svg/pause(1).svg") no-repeat`;
+      elem.style.background = `url("../assets/svg/pauseside.svg") no-repeat`;
       playPauseElement.classList.remove("play");
       playPauseElement.classList.add("pause");
       isPlay = true;
