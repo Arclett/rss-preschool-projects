@@ -46,6 +46,14 @@ nameElement.addEventListener("keypress", function (e) {
 });
 
 function getLocalStorage() {
+  if (localStorage.getItem("settings-lang")) {
+    settings.language = localStorage.getItem("settings-lang");
+    document.querySelector(
+      `.${localStorage.getItem("settings-lang")}`
+    ).checked = true;
+    setLang();
+    getQuotes();
+  }
   if (localStorage.getItem("name")) {
     nameElement.value = localStorage.getItem("name");
   }
@@ -58,14 +66,7 @@ function getLocalStorage() {
     hideElement();
     hideCheckbox();
   }
-  if (localStorage.getItem("settings-lang")) {
-    settings.language = localStorage.getItem("settings-lang");
-    document.querySelector(
-      `.${localStorage.getItem("settings-lang")}`
-    ).checked = true;
-    setLang();
-    getQuotes();
-  }
+
   if (localStorage.getItem("settings-tags-photo", settings.tagsPhoto)) {
     settings.tagsPhoto = localStorage.getItem("settings-tags-photo");
     currentTagSpanElement.textContent = localStorage.getItem(

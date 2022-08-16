@@ -353,7 +353,7 @@ body {
 }
 
 .option {
-  background: url(../assets/svg/settings.svg);
+  background: url(../assets/svg/settings.svg) no-repeat;
   width: 30px;
   height: 30px;
 }
@@ -406,6 +406,17 @@ body {
 
 .tags {
   display: none;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.git-link,
+.rss-link {
+  height: 30px;
 }
 
 @media (max-width: 768px) {
