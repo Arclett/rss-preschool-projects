@@ -1,11 +1,16 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 5vh;
   align-items: center;
   background: url("/images/bg.jpg") no-repeat;
   background-size: cover;
-  height: 100vw;
+  height: 100vh;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .select-button {
@@ -22,9 +27,42 @@
   margin-top: 10px;
 }
 
-.ancient {
-  background: url("/assets/Ancients/Azathoth.png") no-repeat;
-  background-size: cover;
-  height: 40vh;
-  width: 20vw;
+.deck-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5vw;
+}
+
+.ancient-img {
+  height: 50vh;
+  width: auto;
+}
+
+.deck {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.new-card {
+  height: 30vh;
+  width: auto;
+}
+
+.last-card {
+  height: 30vh;
+  width: auto;
+}
+
+.status {
+  margin-top: 5vh;
+  background-color: bisque;
+  border-radius: 20px;
+}
+
+.status-table {
+  text-align: center;
+  margin: 3px;
+  padding: 3px;
+  line-height: 25px;
 }

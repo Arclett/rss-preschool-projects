@@ -1,6 +1,6 @@
 import Ancients from "../assets/Ancients/index";
 
-const ancientsData = [
+export const ancientsData = [
   {
     id: "azathoth",
     name: "azathoth",
@@ -22,8 +22,8 @@ const ancientsData = [
     },
   },
   {
-    id: "cthulhu",
-    name: "cthulhu",
+    id: "cthulthu",
+    name: "cthulthu",
     cardFace: Ancients.cthulhu,
     firstStage: {
       greenCards: 0,
@@ -83,4 +83,4 @@ const ancientsData = [
   },
 ];
 
-export default ancientsData;
+// export default ancientsData;
