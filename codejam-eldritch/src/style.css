@@ -1,0 +1,128 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5vh;
+  align-items: center;
+  background: url("/images/bg.jpg") no-repeat;
+  background-size: cover;
+  height: 100vh;
+  min-height: 500px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.select-button {
+  background-color: bisque;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  margin-top: 10%;
+  border-radius: 20px;
+}
+
+.button-description {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.deck-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5vw;
+}
+
+.ancient-img {
+  height: 50vh;
+  width: auto;
+  border-radius: 10px;
+}
+
+.deck {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10vh;
+}
+
+.new-card {
+  height: 30vh;
+  width: auto;
+  border-radius: 10px;
+  /* transform: translateY(-100px); */
+}
+
+.last-card {
+  height: 30vh;
+  width: auto;
+  border-radius: 10px;
+}
+
+.status {
+  margin-top: 5vh;
+  background-color: bisque;
+  border-radius: 20px;
+}
+
+.status-table {
+  text-align: center;
+  margin: 3px;
+  padding: 3px;
+  background-color: bisque;
+  border-radius: 20px;
+  line-height: 25px;
+}
+
+.select-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: space-evenly;
+  background-color: bisque;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.green1, .green2, .green3 {
+  width: 50px;
+  background-color: green;
+  border: 2px solid white;
+  color: white;
+}
+
+.brown1, .brown2, .brown3 {
+  width: 50px;
+  background: burlywood;
+  background-size: 25px;
+  border: 2px solid white;
+  color: white;
+}
+
+.blue1, .blue2, .blue3 {
+  width: 50px;
+  background: blue;
+  background-size: 25px;
+  border: 2px solid white;
+  color: white;
+}
+
+.transition {
+  transition: 0.3s;
+}
+
+.move {
+  transform: translateY(40vh);
+}
+
+.rotate {
+  transform: rotateY(-90deg);
+}
+
+.back-wrapper {
+  background: url('../assets/mythicCardBackground.png') no-repeat;
+  background-size: contain;
+  border-radius: 10px;
+}
