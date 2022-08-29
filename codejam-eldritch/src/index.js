@@ -1,7 +1,6 @@
 import { blueCards, brownCards, greenCards } from "./data/mythicCards"
 import { ancientsData } from "./data/ancients"
-console.log(blueCards[0].cardFace.split('..')[1]);
-console.log(blueCards[2].cardFace)
+
 let currentAncient;
 let stageOne = []
 let stageTwo = []
@@ -14,13 +13,19 @@ const difficultySelectElemnt = document.querySelector('.difficulty-select');
 const newCardElement = document.querySelector('.new-card')
 const ancientImgElement = document.querySelector('.ancient-img')
 
+//Кнопка замешивания колоды
+
 submitElement.addEventListener('click', function(e) {
     e.preventDefault();
     stageOne = []
     stageTwo = []
     stageThree =[]
+    lastCardElement.classList.add('hidden')
+    document.querySelector('.ancient').classList.remove('hidden')
+    document.querySelector('.status-table').classList.remove('hidden')
+    document.querySelector('.back-wrapper').classList.remove('hidden')
+    newCardElement.classList.remove('hidden')
     currentAncient = ancientsData[ancientSelectElement.value]
-    console.log(currentAncient.name.replace(currentAncient.name[0], currentAncient.name[0].toUpperCase()))
     ancientImgElement.src = `../assets/Ancients/${currentAncient.name.replace(currentAncient.name[0], currentAncient.name[0].toUpperCase())}.png`
     const greenDeck = createDeck(greenCards, 'greenCards', difficultySelectElemnt.value)
     const brownDeck = createDeck(brownCards, 'brownCards', difficultySelectElemnt.value)
@@ -44,8 +49,6 @@ submitElement.addEventListener('click', function(e) {
         if(!stageThree.includes(tempThree[x])) stageThree.push(tempThree[x])
     }
 
-    console.log(stageOne, stageTwo, stageThree)
-
     document.querySelector('.green1').textContent = `${currentAncient.firstStage.greenCards}`
     document.querySelector('.green2').textContent = `${currentAncient.secondStage.greenCards}`
     document.querySelector('.green3').textContent = `${currentAncient.thirdStage.greenCards}`
@@ -56,10 +59,15 @@ submitElement.addEventListener('click', function(e) {
     document.querySelector('.blue2').textContent = `${currentAncient.secondStage.blueCards}`
     document.querySelector('.blue3').textContent = `${currentAncient.thirdStage.blueCards}`
 })
- const randomNum = function (length) {
+
+//Функция для генерации случайных чисел для перемешивания колоды
+
+const randomNum = function (length) {
     return Math.round(Math.random()*(length-1))
  }
 
+
+//Функция для создания базовой колоды с сортировкой по цвету и сложности
 
 const createDeck = function (arr, prop, diff) {
     const filterCards = []
@@ -113,6 +121,8 @@ const createDeck = function (arr, prop, diff) {
     return filterCards
 }
 
+//Функция для сортировки колоды по фазам
+
 const sortDeck = function(arr, color) {
     let x = arr
     const z= x.splice(-currentAncient.thirdStage[`${color}`], currentAncient.thirdStage[`${color}`]);
@@ -121,8 +131,37 @@ const sortDeck = function(arr, color) {
     return [c,v,z]
 }
 
+//Кнопка для перелистывания колоды
+
 newCardElement.addEventListener('click', function(){
-    if(stageOne.length>0) {
+    if(stageThree.length > 0) {
+    lastCardElement.classList.add('hidden')
+    newCardElement.classList.add('transition')
+    newCardElement.classList.add('move')
+    lastCardElement.src = '../assets/mythicCardBackground.png'
+    setTimeout(function(){
+        newCardElement.classList.remove('transition')
+        newCardElement.classList.add('hidden')
+        newCardElement.classList.remove('move') 
+        lastCardElement.classList.remove('hidden')
+        newCardElement.classList.remove('hidden')
+    }, 300)
+    setTimeout(function(){
+        lastCardElement.classList.add('transition')
+        lastCardElement.classList.add('rotate')  
+    }, 600)
+    setTimeout(function(){
+        nextCard();
+        lastCardElement.classList.remove('rotate')
+    }, 900)
+    lastCardElement.classList.remove('transition')
+}
+})
+
+//Функция для пролистывания колоды
+
+const nextCard = function() {
+   if(stageOne.length>0) {
         const x = stageOne.splice(0,1)
         const y = document.querySelector(`.${x[0].color}1`)
         const z = Number(y.textContent)
@@ -140,6 +179,5 @@ newCardElement.addEventListener('click', function(){
         const z = Number(y.textContent)
         y.textContent = `${z-1}`
         lastCardElement.src = `..${x[0].cardFace.split('..')[1]}`
-    }
-})
-
+    } 
+}

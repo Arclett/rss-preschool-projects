@@ -10,8 +10,8 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="select-wrapper">
-          <form>
+      <div>
+          <form class="select-form">
             <select name="ancient" class="ancient-select" required>
               <option value="">Выберите древнего</option>
               <option value="0">Азатот</option>
@@ -34,23 +34,23 @@
           <span class="button-description">Замешать колоду</span>
         </div> -->
       <div class="deck-wrapper">
-        <div class="ancient">
+        <div class="ancient hidden">
           <img class="ancient-img" src="assets/Ancients/Azathoth.png">
           <div class="status">
-            <table class="status-table">
-              <thead><tr><td></td><th>Зеленые</th><th>Коричневые</th><th>Синее</th></tr></thead>
-              <tbody><tr><th>Первый этап</th><td class="green1">0</td><td class="brown1">0</td><td class="blue1">0</td></tr>
-                <tr><th>Второй этап</th><td class="green2">0</td><td class="brown2">0</td><td class="blue2">0</td></tr>
-                <tr><th>Третий этап</th><td class="green3">0</td><td class="brown3">0</td><td class="blue3">0</td></tr></tbody>
+            <table class="status-table hidden">
+              <thead></thead>
+              <tbody><tr><th>Этап I</th><td class="green1">0</td><td class="brown1">0</td><td class="blue1">0</td></tr>
+                <tr><th>Этап II</th><td class="green2">0</td><td class="brown2">0</td><td class="blue2">0</td></tr>
+                <tr><th>Этап III</th><td class="green3">0</td><td class="brown3">0</td><td class="blue3">0</td></tr></tbody>
             </table>
           </div>
         </div>
         <div class="deck">
-            <div>
-              <img class="new-card" src="../assets/mythicCardBackground.png">
+            <div class="back-wrapper hidden">
+              <img class="new-card hidden" src="../assets/mythicCardBackground.png">
             </div>
             <div>
-              <img class="last-card" src="../assets/MythicCards/blue/blue1.png">
+              <img class="last-card front hidden" src="../assets/MythicCards/blue/blue1.png">
           </div>
         </div>
       </div>
